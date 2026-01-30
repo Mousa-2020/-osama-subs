@@ -137,39 +137,39 @@ const facebookData = {
         ],
         packages: {
             yemeni: [
-                { id: "yemeni_1k", name: "١٠٠٠ متابع", price: "١٠ دولار", featured: true },
-                { id: "yemeni_3k", name: "٣٠٠٠ متابع", price: "٣٠ دولار" },
-                { id: "yemeni_5k", name: "٥٠٠٠ متابع", price: "٥٠ دولار" },
-                { id: "yemeni_10k", name: "١٠٠٠٠ متابع", price: "١٠٠ دولار" }
+                { id: "yemeni_1k", name: "١٠٠٠ متابع", price: "9$", featured: true },
+                { id: "yemeni_3k", name: "٣٠٠٠ متابع", price: "25" },
+                { id: "yemeni_5k", name: "٥٠٠٠ متابع", price: "40$" },
+                { id: "yemeni_10k", name: "١٠٠٠٠ متابع", price: "75$" }
             ],
             foreign: [
-                { id: "foreign_1k", name: "١٠٠٠ متابع", price: "٢ دولار", featured: true },
-                { id: "foreign_3k", name: "٣٠٠٠ متابع", price: "٤ دولار" },
-                { id: "foreign_5k", name: "٥٠٠٠ متابع", price: "١٠ دولار" },
-                { id: "foreign_10k", name: "١٠٠٠٠ متابع", price: "٢٠ دولار" }
+                { id: "foreign_1k", name: "١٠٠٠ متابع", price: "2.5$", featured: true },
+                { id: "foreign_3k", name: "٣٠٠٠ متابع", price: "7$" },
+                { id: "foreign_5k", name: "٥٠٠٠ متابع", price: "12$" },
+                { id: "foreign_10k", name: "١٠٠٠٠ متابع", price: "22$" }
             ]
         }
     },
     "fb-likes": {
         title: "لايكات منشور Facebook",
-        description: "اختر نوع اللايكات ثم اختر الباقة",
+        description: "اختر احد باقات اللايكات ",
         type: "category",
         categories: [
-            { id: "arabic", name: "عربية", color: "#E4405F" },
+          //  { id: "arabic", name: "عربية", color: "#E4405F" },
             { id: "foreign", name: "أجنبية", color: "#8e24aa" }
         ],
         packages: {
-            arabic: [
-                { id: "arabic_1k", name: "١٠٠٠ لايك", price: "٢ دولار" },
-                { id: "arabic_2k", name: "٢٠٠٠ لايك", price: "٣ دولار", featured: true },
-                { id: "arabic_5k", name: "٥٠٠٠ لايك", price: "٦ دولار" },
-                { id: "arabic_10k", name: "١٠٠٠٠ لايك", price: "١٠ دولار" }
-            ],
+          /*  arabic: [
+                { id: "arabic_1k", name: "١٠٠٠ لايك", price: "" },
+                { id: "arabic_2k", name: "٢٠٠٠ لايك", price: "", featured: true },
+                { id: "arabic_5k", name: "٥٠٠٠ لايك", price: "" },
+                { id: "arabic_10k", name: "١٠٠٠٠ لايك", price: "" }
+            ],*/
             foreign: [
-                { id: "foreign_1k", name: "١٠٠٠ لايك", price: "١.٥ دولار" },
-                { id: "foreign_2k", name: "٢٠٠٠ لايك", price: "٢.٥ دولار" },
-                { id: "foreign_5k", name: "٥٠٠٠ لايك", price: "٥ دولار", featured: true },
-                { id: "foreign_10k", name: "١٠٠٠٠ لايك", price: "٨ دولار" }
+                { id: "foreign_1k", name: "١٠٠٠ لايك", price: "1.5$" },
+                { id: "foreign_2k", name: "٢٠٠٠ لايك", price: "3$" },
+                { id: "foreign_5k", name: "٥٠٠٠ لايك", price: "7$", featured: true },
+                { id: "foreign_10k", name: "١٠٠٠٠ لايك", price: "14$" }
             ]
         }
     },
@@ -183,16 +183,16 @@ const facebookData = {
         ],
         packages: {
             arabic: [
-                { id: "arabic_1k", name: "١٠٠٠ تعليق", price: "٢٠ دولار" },
-                { id: "arabic_2k", name: "٢٠٠٠ تعليق", price: "٣٥ دولار", featured: true },
-                { id: "arabic_5k", name: "٥٠٠٠ تعليق", price: "٨٠ دولار" },
-                { id: "arabic_10k", name: "١٠٠٠٠ تعليق", price: "١٥٠ دولار" }
+                { id: "arabic_1k", name: "١٠٠٠ تعليق", price: "10$" },
+                { id: "arabic_2k", name: "٢٠٠٠ تعليق", price: "20$", featured: true },
+                { id: "arabic_5k", name: "٥٠٠٠ تعليق", price: "50$" },
+                { id: "arabic_10k", name: "١٠٠٠٠ تعليق", price: "100$" }
             ],
             foreign: [
-                { id: "foreign_1k", name: "١٠٠٠ تعليق", price: "١٥ دولار" },
-                { id: "foreign_2k", name: "٢٠٠٠ تعليق", price: "٢٨ دولار" },
-                { id: "foreign_5k", name: "٥٠٠٠ تعليق", price: "٦٥ دولار", featured: true },
-                { id: "foreign_10k", name: "١٠٠٠٠ تعليق", price: "١٢٠ دولار" }
+                { id: "foreign_1k", name: "١٠٠٠ تعليق", price: "" },
+                { id: "foreign_2k", name: "٢٠٠٠ تعليق", price: "" },
+                { id: "foreign_5k", name: "٥٠٠٠ تعليق", price: "", featured: true },
+                { id: "foreign_10k", name: "١٠٠٠٠ تعليق", price: "" }
             ]
         }
     },
@@ -201,7 +201,7 @@ const facebookData = {
         description: "اختر الباقة المناسبة لمشاهدات الفيديو",
         type: "direct",
         packages: [
-            { id: "views_100k", name: "١٠٠٬٠٠٠ مشاهدة", price: "٥ دولار", featured: true },
+            { id: "views_100k", name: "١٠٠٬٠٠٠ مشاهدة", price: "", featured: true },
             { id: "views_500k", name: "٥٠٠٬٠٠٠ مشاهدة", price: "٩ دولار" },
             { id: "views_1m", name: "١٬٠٠٠٬٠٠٠ مشاهدة", price: "١٤ دولار" },
             { id: "views_5m", name: "٥٬٠٠٠٬٠٠٠ مشاهدة", price: "٣٥ دولار" }
