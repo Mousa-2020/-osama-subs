@@ -1,4 +1,246 @@
-/* ===== أنماط المحتوى الداخلي للأقسام (مثل Instagram) ===== */
+/* ===== الأساسيات ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ألوانك المحددة */
+    --color-sky: #4fc3f7;    /* سماوي 50% */
+    --color-white: #ffffff;  /* أبيض 30% */
+    --color-navy: #1a237e;   /* كحلي 20% */
+    --color-light-gray: #f5f5f5;
+    --color-text: #333333;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== الترويسة ===== */
+.main-header {
+    background-color: var(--color-sky);
+    color: var(--color-white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-navy);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
+    color: var(--color-navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-navy);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ===== المحتوى الرئيسي ===== */
+#main-content {
+    flex: 1;
+    padding: 30px 20px;
+}
+
+/* ===== المقدمة ===== */
+.intro-section {
+    background-color: var(--color-light-gray);
+    border-radius: 16px;
+    padding: 30px 25px;
+    margin-bottom: 40px;
+    border-right: 5px solid var(--color-sky);
+    text-align: center;
+}
+
+.intro-title {
+    color: var(--color-navy);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.intro-title .highlight {
+    color: var(--color-sky);
+}
+
+.intro-text {
+    color: var(--color-text);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.intro-text strong {
+    color: var(--color-navy);
+}
+
+.intro-note {
+    background-color: rgba(79, 195, 247, 0.1);
+    border-right: 4px solid var(--color-sky);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: var(--color-navy);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.intro-note i {
+    color: var(--color-sky);
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+.intro-instruction {
+    color: #666;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ===== قسم الخدمات الرئيسية ===== */
+.services-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--color-navy);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    display: block;
+    background-color: var(--color-white);
+    border-radius: 14px;
+    padding: 25px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-sky);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.instagram-bg { background: linear-gradient(45deg, #405de6, #833ab4, #fd1d1d); }
+.facebook-bg { background-color: #1877F2; }
+.tiktok-bg { background-color: #000000; }
+.chat-bg { background-color: var(--color-sky); }
+.gemini-bg { background-color: #8e24aa; }
+
+.service-name {
+    color: var(--color-navy);
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.service-count {
+    color: var(--color-sky);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.service-features li {
+    margin-bottom: 5px;
+}
+
+/* ===== المحتوى الداخلي للأقسام ===== */
 .section-content {
     padding: 20px 0 40px;
     animation: fadeIn 0.4s ease;
@@ -53,7 +295,7 @@
 }
 
 .section-header h2 i {
-    color: #E4405F; /* لون إنستجرام */
+    color: #E4405F;
 }
 
 .section-header p {
@@ -96,7 +338,7 @@
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 1.8rem;
-    color: #E4405F; /* لون إنستجرام */
+    color: #E4405F;
 }
 
 .subservice-card h3 {
@@ -123,7 +365,7 @@
     font-weight: 600;
 }
 
-/* ===== أنماط التفاصيل والخطوات التالية ===== */
+/* ===== التفاصيل والخطوات ===== */
 .detail-header {
     text-align: center;
     margin-bottom: 30px;
@@ -142,7 +384,6 @@
     font-size: 1rem;
 }
 
-/* أزرار التصنيفات (مثل: سعوديون، عراقيون، أجانب) */
 .categories-buttons {
     display: flex;
     justify-content: center;
@@ -175,7 +416,6 @@
     border-color: var(--color-sky);
 }
 
-/* شبكة الباقات */
 .packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -225,7 +465,7 @@
 }
 
 .package-price {
-    color: #E4405F; /* لون إنستجرام */
+    color: #E4405F;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 20px;
@@ -254,7 +494,6 @@
     background-color: #0d1a66;
 }
 
-/* زر العودة في التفاصيل */
 .back-to-services {
     display: block;
     margin: 30px auto;
@@ -274,8 +513,397 @@
     background-color: #555;
 }
 
-/* ===== تجاوب Instagram للجوال ===== */
+/* ===== تخصيصات Facebook ===== */
+#facebook-section .section-header h2 i {
+    color: #1877F2;
+}
+
+#facebook-section .subservice-icon {
+    background: linear-gradient(135deg, #e7f3ff 0%, #d4e7ff 100%);
+    color: #1877F2;
+}
+
+#facebook-section .badge {
+    background-color: #1877F2;
+}
+
+#facebook-section .category-btn.active {
+    background-color: #1877F2;
+    border-color: #1877F2;
+}
+
+#facebook-section .package-price {
+    color: #1877F2;
+}
+
+/* ===== تخصيصات TikTok ===== */
+#tiktok-section .section-header h2 i {
+    color: #000000;
+}
+
+#tiktok-section .subservice-icon {
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    color: #000000;
+}
+
+#tiktok-section .badge {
+    background-color: #000000;
+}
+
+#tiktok-section .category-btn.active {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+#tiktok-section .package-price {
+    color: #000000;
+}
+
+#tiktok-section .subservice-card:hover {
+    border-color: #000000;
+}
+
+/* ===== قسم اشتراكات تشات ===== */
+.chat-plans-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.chat-plan-card {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: var(--color-sky);
+}
+
+.chat-plan-card.featured {
+    border: 2px solid var(--color-sky);
+    transform: scale(1.02);
+    position: relative;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.plan-badge {
+    display: inline-block;
+    background-color: var(--color-sky);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.plan-header h3 {
+    color: var(--color-navy);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.plan-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.plan-features {
+    flex: 1;
+    margin-bottom: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.feature-item i {
+    color: #4CAF50;
+    font-size: 1rem;
+}
+
+.plan-pricing {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.price-option {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+    border: 1px solid #eee;
+}
+
+.price-option:hover {
+    background-color: #f0f0f0;
+    border-color: var(--color-sky);
+}
+
+.price-label {
+    font-size: 1rem;
+    color: var(--color-navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.price-amount {
+    font-size: 1.8rem;
+    color: var(--color-sky);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price-save {
+    background-color: #4CAF50;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.select-plan-btn {
+    background-color: var(--color-navy);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: background-color 0.3s;
+    font-family: 'Cairo', sans-serif;
+}
+
+.select-plan-btn:hover {
+    background-color: #0d1a66;
+}
+
+/* ===== قسم اشتراكات جيمناي ===== */
+.gemini-plans-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.gemini-plan-card {
+    background-color: var(--color-white);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.gemini-plan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: #8e24aa;
+}
+
+.gemini-plan-card.featured {
+    border: 2px solid #8e24aa;
+    transform: scale(1.02);
+}
+
+#gemini-section .plan-badge {
+    background-color: #8e24aa;
+}
+
+#gemini-section .plan-header h3 {
+    color: #8e24aa;
+}
+
+#gemini-section .price-amount {
+    color: #8e24aa;
+}
+
+#gemini-section .select-plan-btn {
+    background-color: #8e24aa;
+}
+
+#gemini-section .select-plan-btn:hover {
+    background-color: #6a1b9a;
+}
+
+.plan-note {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #f3e5f5;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6a1b9a;
+    border-right: 3px solid #8e24aa;
+}
+
+.plan-note i {
+    margin-left: 8px;
+}
+
+.gemini-plan-card[data-plan="pro"] .plan-badge {
+    background-color: var(--color-sky);
+}
+
+.gemini-plan-card[data-plan="pro"] .plan-header h3 {
+    color: var(--color-navy);
+}
+
+.gemini-plan-card[data-plan="pro"] .price-amount {
+    color: var(--color-sky);
+}
+
+.gemini-plan-card[data-plan="pro"] .select-plan-btn {
+    background-color: var(--color-navy);
+}
+
+.gemini-plan-card[data-plan="pro"] .select-plan-btn:hover {
+    background-color: #0d1a66;
+}
+
+/* ===== التذييل ===== */
+.main-footer {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    padding: 30px 0 20px;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.footer-brand h3 {
+    color: var(--color-sky);
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.footer-brand p {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.footer-contact h4 {
+    margin-bottom: 15px;
+    color: var(--color-sky);
+    font-size: 1.1rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 0.95rem;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.whatsapp {
+    background-color: #25d366;
+    color: white;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.support-text {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #b0b0b0;
+    font-size: 0.85rem;
+}
+
+/* ===== التجاوب مع الجوال ===== */
 @media (max-width: 768px) {
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-sky);
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .main-nav.active ul {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    #main-content {
+        padding: 20px 15px;
+    }
+    
     .section-header h2 {
         font-size: 1.5rem;
         margin-top: 10px;
@@ -287,6 +915,20 @@
         right: auto;
         top: auto;
         align-self: center;
+    }
+    
+    .footer-content {
+        text-align: center;
+    }
+    
+    .contact-links {
+        align-items: center;
+    }
+    
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
     
     .subservices-grid {
@@ -308,9 +950,40 @@
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 20px;
     }
+    
+    .chat-plans-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .chat-plan-card {
+        padding: 25px;
+    }
+    
+    .plan-pricing {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .price-option {
+        padding: 18px;
+    }
+    
+    .gemini-plans-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .gemini-plan-card {
+        padding: 25px;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .subservices-grid {
         grid-template-columns: 1fr;
     }
@@ -324,688 +997,22 @@
         width: 100%;
         max-width: 250px;
     }
-}.content-section {
-    display: none;
-    animation: fadeIn 0.5s ease;
-}
-
-.content-section.active-section {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* الصفحة الرئيسية */
-.hero {
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-    border-radius: 16px;
-    padding: 50px 40px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.hero h2 {
-    color: #1a237e;
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #455a64;
-    margin-bottom: 30px;
-}
-
-.hero-features {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: white;
-    padding: 15px 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
-.feature i {
-    color: #1a237e;
-    font-size: 20px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 28px;
-    color: #1a237e;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: #4fc3f7;
-    border-radius: 2px;
-}
-
-.category-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.category-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 30px 25px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.category-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
-}
-
-.category-card i {
-    font-size: 48px;
-    margin-bottom: 20px;
-    color: #1a237e;
-}
-
-.category-card h4 {
-    font-size: 22px;
-    color: #1a237e;
-    margin-bottom: 12px;
-}
-
-.category-card p {
-    color: #546e7a;
-    font-size: 15px;
-}
-
-/* بطاقات الاشتراكات */
-.section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-header h2 {
-    font-size: 32px;
-    color: #1a237e;
-    margin-bottom: 10px;
-}
-
-.section-header h2 i {
-    margin-left: 15px;
-    color: #4fc3f7;
-}
-
-.section-header p {
-    font-size: 18px;
-    color: #546e7a;
-}
-
-.plans-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.plan-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 30px;
-    width: 280px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-    position: relative;
-    transition: transform 0.3s;
-}
-
-.plan-card:hover {
-    transform: translateY(-5px);
-}
-
-.plan-card.featured {
-    border: 2px solid #4fc3f7;
-    transform: scale(1.05);
-}
-
-.plan-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: #4fc3f7;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.plan-header {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.plan-header h3 {
-    font-size: 24px;
-    color: #1a237e;
-    margin-bottom: 8px;
-}
-
-.plan-header p {
-    color: #78909c;
-    font-size: 14px;
-}
-
-.plan-features {
-    margin-bottom: 25px;
-}
-
-.feature-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.feature-item i {
-    color: #4caf50;
-}
-
-.select-plan-btn {
-    background-color: #1a237e;
-    color: white;
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.select-plan-btn:hover {
-    background-color: #283593;
-}
-
-/* باقات الانستجرام */
-.instagram-packages {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.insta-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 25px;
-    width: 220px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.insta-card:hover {
-    transform: translateY(-5px);
-}
-
-.insta-card.featured {
-    border: 2px solid #e4405f;
-    transform: scale(1.05);
-}
-
-.insta-header {
-    margin-bottom: 20px;
-}
-
-.insta-header h3 {
-    font-size: 22px;
-    color: #1a237e;
-    margin-bottom: 10px;
-}
-
-.insta-price {
-    font-size: 24px;
-    color: #e4405f;
-    font-weight: 700;
-}
-
-.insta-features {
-    margin-bottom: 25px;
-}
-
-.insta-feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    justify-content: center;
-}
-
-.insta-feature i {
-    color: #e4405f;
-}
-
-.select-insta-btn {
-    background-color: #e4405f;
-    color: white;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.select-insta-btn:hover {
-    background-color: #d81b60;
-}
-
-/* باقات جيمناي */
-.gemini-plans {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.gemini-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 30px;
-    width: 300px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.gemini-card:hover {
-    transform: translateY(-5px);
-}
-
-.gemini-card.featured {
-    border: 2px solid #6200ea;
-}
-
-.gemini-header {
-    margin-bottom: 25px;
-}
-
-.gemini-header h3 {
-    font-size: 22px;
-    color: #1a237e;
-    margin-bottom: 10px;
-}
-
-.gemini-price {
-    font-size: 28px;
-    color: #6200ea;
-    font-weight: 700;
-}
-
-.gemini-price span {
-    font-size: 16px;
-    color: #78909c;
-}
-
-.gemini-features {
-    margin-bottom: 25px;
-}
-
-.gemini-feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    justify-content: center;
-}
-
-.gemini-feature i {
-    color: #6200ea;
-}
-
-.select-gemini-btn {
-    background-color: #6200ea;
-    color: white;
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.select-gemini-btn:hover {
-    background-color: #7c4dff;
-}
-
-/* قسم اختيار الفترة */
-.billing-section {
-    text-align: center;
-}
-
-.billing-options {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
-}
-
-.billing-card {
-    background-color: white;
-    border-radius: 12px;
-    padding: 40px 30px;
-    width: 320px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.billing-card.featured {
-    border: 2px solid #4caf50;
-}
-
-.billing-header {
-    margin-bottom: 30px;
-}
-
-.billing-header h3 {
-    font-size: 26px;
-    color: #1a237e;
-    margin-bottom: 15px;
-}
-
-.billing-price {
-    font-size: 36px;
-    color: #4caf50;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.billing-save {
-    background-color: #4caf50;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    display: inline-block;
-}
-
-.billing-features {
-    margin-bottom: 30px;
-}
-
-.billing-feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    justify-content: center;
-}
-
-.billing-feature i {
-    color: #4caf50;
-}
-
-.select-billing-btn {
-    background-color: #1a237e;
-    color: white;
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.select-billing-btn:hover {
-    background-color: #283593;
-}
-
-.back-btn {
-    background-color: #78909c;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 40px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.back-btn:hover {
-    background-color: #546e7a;
-}
-
-/* نموذج الطلب */
-.order-section {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.order-summary {
-    background-color: #e8f5e9;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.order-summary h3 {
-    color: #1a237e;
-    margin-bottom: 10px;
-}
-
-#order-summary-text {
-    font-size: 18px;
-    color: #2e7d32;
-    font-weight: 600;
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #1a237e;
-    font-size: 16px;
-}
-
-.form-group label i {
-    margin-left: 8px;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #cfd8dc;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Cairo', sans-serif;
-    transition: border 0.3s;
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    border-color: #4fc3f7;
-    outline: none;
-}
-
-.form-group small {
-    display: block;
-    margin-top: 5px;
-    color: #78909c;
-    font-size: 14px;
-}
-
-.form-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-.submit-order-btn {
-    background-color: #25d366;
-    color: white;
-    padding: 16px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.3s;
-}
-
-.submit-order-btn:hover {
-    background-color: #128c7e;
-}
-
-/* تذييل الصفحة */
-footer {
-    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-    color: white;
-    margin-top: 60px;
-    padding-top: 40px;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-section h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #4fc3f7;
-}
-
-.footer-section h3 i {
-    margin-left: 10px;
-}
-
-.footer-section p {
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-.footer-section p i {
-    margin-left: 8px;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 14px;
-}
-
-/* التجاوب مع الشاشات الصغيرة */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
+    
+    .chat-plans-container {
+        grid-template-columns: 1fr;
     }
     
-    .nav-links {
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .hero h2 {
-        font-size: 26px;
-    }
-    
-    .hero-features {
-        gap: 15px;
-    }
-    
-    .feature {
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    .plans-container, .instagram-packages, .gemini-plans {
-        gap: 20px;
-    }
-    
-    .plan-card, .insta-card, .gemini-card {
-        width: 100%;
-        max-width: 350px;
-    }
-    
-    .billing-options {
-        gap: 20px;
-    }
-    
-    .billing-card {
-        width: 100%;
-        max-width: 350px;
-    }
-    
-    .form-actions {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .form-actions button {
-        width: 100%;
+    .gemini-plans-container {
+        grid-template-columns: 1fr;
     }
 }
 
-.hidden-section {
-    display: none;
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-brand h3 {
+        font-size: 1.1rem;
+    }
 }
