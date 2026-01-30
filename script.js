@@ -1,242 +1,304 @@
-// بيانات الأسعار (يمكنك تعديلها)
-const prices = {
-    "go": { 
-        monthly: "٥٠,٠٠٠ دينار",
-        yearly: "٤٠٠,٠٠٠ دينار"
+// أضف هذا الكود داخل أو بعد دالة DOMContentLoaded
+
+// بيانات Instagram (الأسعار الافتراضية - يمكنك تعديلها لاحقاً)
+const instagramData = {
+    followers: {
+        title: "باقات المتابعين",
+        description: "اختر الجنسية ثم اختر الباقة المناسبة",
+        type: "category", // له تصنيفات فرعية
+        categories: [
+            { id: "saudi", name: "سعوديون", color: "#1a237e" },
+            { id: "iraqi", name: "عراقيون", color: "#4fc3f7" },
+            { id: "foreign", name: "أجانب", color: "#8e24aa" }
+        ],
+        packages: {
+            saudi: [
+                { id: "saudi_1k", name: "١٠٠٠ متابع", price: "٤٠ دولار", featured: true },
+                { id: "saudi_3k", name: "٣٠٠٠ متابع", price: "١٠٠ دولار" },
+                { id: "saudi_5k", name: "٥٠٠٠ متابع", price: "١٥٠ دولار" },
+                { id: "saudi_10k", name: "١٠٠٠٠ متابع", price: "٢٨٠ دولار" }
+            ],
+            iraqi: [
+                { id: "iraqi_1k", name: "١٠٠٠ متابع", price: "٢٥ دولار", featured: true },
+                { id: "iraqi_3k", name: "٣٠٠٠ متابع", price: "٦٠ دولار" },
+                { id: "iraqi_5k", name: "٥٠٠٠ متابع", price: "٩٠ دولار" },
+                { id: "iraqi_10k", name: "١٠٠٠٠ متابع", price: "١٦٠ دولار" }
+            ],
+            foreign: [
+                { id: "foreign_1k", name: "١٠٠٠ متابع", price: "١٥ دولار", featured: true },
+                { id: "foreign_3k", name: "٣٠٠٠ متابع", price: "٣٥ دولار" },
+                { id: "foreign_5k", name: "٥٠٠٠ متابع", price: "٥٠ دولار" },
+                { id: "foreign_10k", name: "١٠٠٠٠ متابع", price: "٩٠ دولار" }
+            ]
+        }
     },
-    "plus": { 
-        monthly: "٧٥,٠٠٠ دينار", 
-        yearly: "٦٠٠,٠٠٠ دينار"
+    likes: {
+        title: "لايكات المنشورات",
+        description: "اختر نوع اللايكات ثم اختر الباقة",
+        type: "category",
+        categories: [
+            { id: "arabic", name: "عربية", color: "#E4405F" },
+            { id: "foreign", name: "أجنبية", color: "#8e24aa" }
+        ],
+        packages: {
+            arabic: [
+                { id: "arabic_1k", name: "١٠٠٠ لايك", price: "٢ دولار" },
+                { id: "arabic_2k", name: "٢٠٠٠ لايك", price: "٣ دولار", featured: true },
+                { id: "arabic_5k", name: "٥٠٠٠ لايك", price: "٦ دولار" },
+                { id: "arabic_10k", name: "١٠٠٠٠ لايك", price: "١٠ دولار" }
+            ],
+            foreign: [
+                { id: "foreign_1k", name: "١٠٠٠ لايك", price: "١.٥ دولار" },
+                { id: "foreign_2k", name: "٢٠٠٠ لايك", price: "٢.٥ دولار" },
+                { id: "foreign_5k", name: "٥٠٠٠ لايك", price: "٥ دولار", featured: true },
+                { id: "foreign_10k", name: "١٠٠٠٠ لايك", price: "٨ دولار" }
+            ]
+        }
     },
-    "pro": { 
-        monthly: "١٠٠,٠٠٠ دينار", 
-        yearly: "٨٠٠,٠٠٠ دينار"
-    },
-    "ultra": { 
-        monthly: "١٥٠,٠٠٠ دينار", 
-        yearly: "١,٢٠٠,٠٠٠ دينار"
+    // ... يمكن إضافة بقية الخدمات (comments, reels, إلخ) بنفس الهيكل
+    verification: {
+        title: "توثيق الحساب (العلامة الزرقاء)",
+        description: "خدمة استشارية للمساعدة في تقديم طلب التوثيق",
+        type: "contact", // نوع خاص - يفتح نموذج تواصل مباشر
+        contactMessage: "أريد الاستفسار عن خدمة التوثيق (العلامة الزرقاء) على Instagram"
     }
 };
 
 // متغيرات لتتبع حالة الطلب
 let currentOrder = {
-    serviceType: "", // "chat", "instagram", "gemini"
-    planType: "",    // نوع الاشتراك
-    planName: "",    // اسم الاشتراك المعروض
-    billingType: "", // "monthly", "yearly"
-    price: "",       // السعر النهائي
-    quantity: 1      // الكمية (لمتابعين الانستجرام)
+    service: "",
+    category: "",
+    package: null
 };
 
-// وظيفة الانتقال بين الأقسام
-function switchSection(sectionId) {
-    // إخفاء كل الأقسام
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.remove('active-section');
+// وظائف التحكم في واجهة Instagram
+function setupInstagramSection() {
+    const mainContent = document.getElementById('main-content');
+    const instagramSection = document.getElementById('instagram-section');
+    const backToMainBtn = document.querySelector('.back-to-main');
+    const subserviceCards = document.querySelectorAll('.subservice-card');
+    
+    // الانتقال من الرئيسية إلى Instagram
+    function showInstagramSection() {
+        mainContent.classList.add('hidden');
+        instagramSection.classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+    
+    // العودة من Instagram إلى الرئيسية
+    function showMainContent() {
+        instagramSection.classList.add('hidden');
+        mainContent.classList.remove('hidden');
+        window.scrollTo(0, 0);
+        // إعادة ضبط التفاصيل إذا كانت ظاهرة
+        document.getElementById('instagram-detail').classList.add('hidden');
+        document.querySelector('.subservices-grid').classList.remove('hidden');
+    }
+    
+    // عند النقر على بطاقة خدمة فرعية
+    function handleSubserviceClick(serviceId) {
+        currentOrder.service = serviceId;
+        const serviceData = instagramData[serviceId];
+        
+        if (!serviceData) return;
+        
+        // إخفاء قائمة الخدمات الفرعية
+        document.querySelector('.subservices-grid').classList.add('hidden');
+        
+        // عرض تفاصيل الخدمة
+        const detailContainer = document.getElementById('instagram-detail');
+        detailContainer.innerHTML = '';
+        detailContainer.classList.remove('hidden');
+        
+        // بناء واجهة الخدمة حسب نوعها
+        if (serviceData.type === 'contact') {
+            buildContactService(serviceData, detailContainer);
+        } else if (serviceData.type === 'category') {
+            buildCategoryService(serviceData, detailContainer);
+        } else {
+            buildDirectPackages(serviceData, detailContainer);
+        }
+        
+        // إضافة زر العودة
+        const backBtn = document.createElement('button');
+        backBtn.className = 'back-to-services';
+        backBtn.innerHTML = '<i class="fas fa-arrow-right"></i> العودة لقائمة الخدمات';
+        backBtn.addEventListener('click', function() {
+            detailContainer.classList.add('hidden');
+            document.querySelector('.subservices-grid').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        });
+        detailContainer.appendChild(backBtn);
+        
+        window.scrollTo(0, 0);
+    }
+    
+    // بناء واجهة الخدمات ذات التصنيفات (مثل المتابعين)
+    function buildCategoryService(serviceData, container) {
+        const header = document.createElement('div');
+        header.className = 'detail-header';
+        header.innerHTML = `
+            <h3>${serviceData.title}</h3>
+            <p>${serviceData.description}</p>
+        `;
+        container.appendChild(header);
+        
+        // أزرار التصنيفات
+        const categoriesDiv = document.createElement('div');
+        categoriesDiv.className = 'categories-buttons';
+        
+        serviceData.categories.forEach(category => {
+            const btn = document.createElement('button');
+            btn.className = 'category-btn';
+            btn.textContent = category.name;
+            btn.dataset.category = category.id;
+            btn.style.borderColor = category.color;
+            
+            btn.addEventListener('click', function() {
+                // إزالة النشط من جميع الأزرار
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                // تفعيل الزر الحالي
+                this.classList.add('active');
+                // عرض باقات هذا التصنيف
+                currentOrder.category = category.id;
+                showPackages(serviceData.packages[category.id], container, category.name);
+            });
+            
+            categoriesDiv.appendChild(btn);
+        });
+        
+        container.appendChild(categoriesDiv);
+        
+        // تفعيل الزر الأول افتراضياً
+        if (serviceData.categories.length > 0) {
+            const firstBtn = categoriesDiv.querySelector('.category-btn');
+            firstBtn.click();
+        }
+    }
+    
+    // عرض الباقات
+    function showPackages(packages, container, categoryName) {
+        // إزالة الباقات القديمة إذا كانت موجودة
+        const oldPackages = container.querySelector('.packages-grid');
+        if (oldPackages) oldPackages.remove();
+        
+        if (!packages || packages.length === 0) return;
+        
+        const packagesGrid = document.createElement('div');
+        packagesGrid.className = 'packages-grid';
+        
+        packages.forEach(pkg => {
+            const packageCard = document.createElement('div');
+            packageCard.className = `package-card ${pkg.featured ? 'featured' : ''}`;
+            
+            packageCard.innerHTML = `
+                ${pkg.featured ? '<div class="package-badge">الأكثر طلباً</div>' : ''}
+                <h4 class="package-title">${pkg.name}</h4>
+                <div class="package-price">${pkg.price}</div>
+                <button class="select-package-btn" data-package='${JSON.stringify(pkg)}'>
+                    اختر هذه الباقة
+                </button>
+            `;
+            
+            // إضافة مستمع الحدث للزر
+            const selectBtn = packageCard.querySelector('.select-package-btn');
+            selectBtn.addEventListener('click', function() {
+                const pkgData = JSON.parse(this.dataset.package);
+                currentOrder.package = pkgData;
+                completeOrder();
+            });
+            
+            packagesGrid.appendChild(packageCard);
+        });
+        
+        // إدراج الباقات قبل زر العودة
+        const backBtn = container.querySelector('.back-to-services');
+        container.insertBefore(packagesGrid, backBtn);
+    }
+    
+    // بناء واجهة الخدمات الاستشارية (مثل التوثيق)
+    function buildContactService(serviceData, container) {
+        const header = document.createElement('div');
+        header.className = 'detail-header';
+        header.innerHTML = `
+            <h3>${serviceData.title}</h3>
+            <p>${serviceData.description}</p>
+            <div style="margin-top: 20px; padding: 20px; background-color: #f0f9ff; border-radius: 10px;">
+                <p style="color: var(--color-navy); margin-bottom: 15px;">
+                    <i class="fas fa-info-circle"></i> هذه خدمة استشارية. للمناقشة والتسعير، يرجى التواصل معنا مباشرة.
+                </p>
+                <button id="contact-consultation-btn" class="select-package-btn" style="max-width: 300px;">
+                    <i class="fab fa-whatsapp"></i> تواصل معنا للاستفسار
+                </button>
+            </div>
+        `;
+        
+        container.appendChild(header);
+        
+        // زر التواصل
+        document.getElementById('contact-consultation-btn').addEventListener('click', function() {
+            const message = encodeURIComponent(serviceData.contactMessage);
+            const whatsappUrl = `https://wa.me/00967776440357?text=${message}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+    
+    // إكمال الطلب وفتح واتساب
+    function completeOrder() {
+        if (!currentOrder.service || !currentOrder.package) return;
+        
+        const serviceName = instagramData[currentOrder.service].title;
+        const packageName = currentOrder.package.name;
+        const packagePrice = currentOrder.package.price;
+        
+        let message = `أريد شراء الخدمة التالية من LAZAROS STORE:%0A%0A`;
+        message += `📱 *الخدمة:* ${serviceName}%0A`;
+        
+        if (currentOrder.category) {
+            const categoryName = instagramData[currentOrder.service].categories
+                .find(c => c.id === currentOrder.category).name;
+            message += `🌍 *النوع:* ${categoryName}%0A`;
+        }
+        
+        message += `📦 *الباقة:* ${packageName}%0A`;
+        message += `💰 *السعر:* ${packagePrice}%0A%0A`;
+        message += `---%0Aتم إرسال هذا الطلب عبر موقع LAZAROS STORE`;
+        
+        const whatsappUrl = `https://wa.me/00967776440357?text=${message}`;
+        window.open(whatsappUrl, '_blank');
+        
+        // إعادة تعيين الطلب بعد ثانيتين
+        setTimeout(() => {
+            currentOrder = { service: "", category: "", package: null };
+            showMainContent();
+        }, 2000);
+    }
+    
+    // ربط الأحداث
+    // 1. عند النقر على "Instagram" من القائمة الرئيسية أو البطاقة
+    document.querySelectorAll('[data-section="instagram"]').forEach(element => {
+        element.addEventListener('click', function(e) {
+            e.preventDefault();
+            showInstagramSection();
+        });
     });
     
-    // إخفاء أقسام الفترة والنموذج إذا كانت ظاهرة
-    document.getElementById('billing-section').classList.add('hidden-section');
-    document.getElementById('order-form-section').classList.add('hidden-section');
+    // 2. زر العودة للرئيسية
+    backToMainBtn.addEventListener('click', showMainContent);
     
-    // إظهار القسم المطلوب
-    document.getElementById(sectionId).classList.add('active-section');
-    
-    // تحديث القائمة النشطة في شريط التنقل
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('data-section') === sectionId) {
-            link.classList.add('active');
-        }
+    // 3. بطاقات الخدمات الفرعية
+    subserviceCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const serviceId = this.dataset.service;
+            handleSubserviceClick(serviceId);
+        });
     });
 }
 
-// تهيئة الموقع عند التحميل
+// استدعاء الدالة بعد تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
-    // إضافة مستمعي الأحداث لأزرار التنقل
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const sectionId = this.getAttribute('data-section');
-            switchSection(sectionId);
-        });
-    });
+    // ... الكود السابق يبقى هنا
     
-    // الانتقال للأقسام من الصفحة الرئيسية
-    document.querySelectorAll('.category-card').forEach(card => {
-        card.addEventListener('click', function() {
-            const sectionId = this.getAttribute('data-section');
-            switchSection(sectionId);
-        });
-    });
-    
-    // اختيار اشتراك تشات
-    document.querySelectorAll('.select-plan-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const planType = this.getAttribute('data-plan-type');
-            const planName = this.getAttribute('data-plan-name');
-            
-            // حفظ بيانات الطلب
-            currentOrder.serviceType = "chat";
-            currentOrder.planType = planType;
-            currentOrder.planName = planName;
-            
-            // تحديث واجهة اختيار الفترة
-            document.getElementById('selected-plan-title').textContent = `لـ ${planName}`;
-            
-            // تعبئة الأسعار
-            if (prices[planType]) {
-                document.getElementById('price-monthly').textContent = prices[planType].monthly;
-                document.getElementById('price-yearly').textContent = prices[planType].yearly;
-            }
-            
-            // الانتقال لقسم اختيار الفترة
-            document.querySelector('.active-section').classList.remove('active-section');
-            document.getElementById('billing-section').classList.remove('hidden-section');
-        });
-    });
-    
-    // اختيار باقة انستجرام
-    document.querySelectorAll('.select-insta-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const followers = this.getAttribute('data-followers');
-            const price = this.getAttribute('data-price');
-            
-            // حفظ بيانات الطلب
-            currentOrder.serviceType = "instagram";
-            currentOrder.planType = "followers";
-            currentOrder.planName = `${followers} متابع انستجرام`;
-            currentOrder.price = `${price} دينار`;
-            currentOrder.quantity = followers;
-            
-            // تحديث ملخص الطلب
-            document.getElementById('order-summary-text').textContent = 
-                `${followers} متابع انستجرام بسعر ${price} دينار`;
-            
-            // الانتقال مباشرة لنموذج الطلب (لا يوجد شهري/سنوي)
-            document.querySelector('.active-section').classList.remove('active-section');
-            document.getElementById('order-form-section').classList.remove('hidden-section');
-        });
-    });
-    
-    // اختيار اشتراك جيمناي
-    document.querySelectorAll('.select-gemini-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const plan = this.getAttribute('data-plan');
-            const planName = this.getAttribute('data-plan-name');
-            const price = this.getAttribute('data-price');
-            
-            // حفظ بيانات الطلب
-            currentOrder.serviceType = "gemini";
-            currentOrder.planType = plan;
-            currentOrder.planName = planName;
-            currentOrder.price = `${price} دينار`;
-            currentOrder.billingType = "monthly"; // جيمناي فقط شهري حسب التصميم
-            
-            // تحديث ملخص الطلب
-            document.getElementById('order-summary-text').textContent = 
-                `${planName} بسعر ${price} دينار شهرياً`;
-            
-            // الانتقال مباشرة لنموذج الطلب
-            document.querySelector('.active-section').classList.remove('active-section');
-            document.getElementById('order-form-section').classList.remove('hidden-section');
-        });
-    });
-    
-    // اختيار الفترة (شهري/سنوي) لاشتراكات التشات
-    document.querySelectorAll('.select-billing-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const billingType = this.getAttribute('data-billing');
-            const priceElement = this.closest('.billing-card').querySelector('.billing-price');
-            const price = priceElement.textContent;
-            
-            // حفظ بيانات الطلب
-            currentOrder.billingType = billingType;
-            currentOrder.price = price;
-            
-            // بناء نص ملخص الطلب
-            const billingText = billingType === 'monthly' ? 'شهري' : 'سنوي';
-            document.getElementById('order-summary-text').textContent = 
-                `${currentOrder.planName} - اشتراك ${billingText} بسعر ${price}`;
-            
-            // الانتقال لنموذج الطلب
-            document.getElementById('billing-section').classList.add('hidden-section');
-            document.getElementById('order-form-section').classList.remove('hidden-section');
-        });
-    });
-    
-    // العودة من اختيار الفترة لاختيار النوع
-    document.getElementById('back-to-plans').addEventListener('click', function() {
-        document.getElementById('billing-section').classList.add('hidden-section');
-        document.getElementById('chat').classList.add('active-section');
-    });
-    
-    // العودة من نموذج الطلب لاختيار الفترة
-    document.getElementById('back-to-billing').addEventListener('click', function() {
-        if (currentOrder.serviceType === "chat") {
-            document.getElementById('order-form-section').classList.add('hidden-section');
-            document.getElementById('billing-section').classList.remove('hidden-section');
-        } else {
-            // للخدمات الأخرى، العودة للقسم الخاص بها
-            document.getElementById('order-form-section').classList.add('hidden-section');
-            document.getElementById(currentOrder.serviceType).classList.add('active-section');
-        }
-    });
-    
-    // معالجة إرسال نموذج الطلب
-    document.getElementById('final-order-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // جمع بيانات النموذج
-        const name = document.getElementById('customer-name').value.trim();
-        const phone = document.getElementById('customer-phone').value.trim();
-        const notes = document.getElementById('customer-notes').value.trim();
-        
-        if (!name || !phone) {
-            alert('الرجاء إدخال الاسم ورقم الهاتف');
-            return;
-        }
-        
-        // بناء رسالة الواتساب
-        let whatsappMessage = `مرحبًا، أريد شراء الخدمة التالية:\n\n`;
-        whatsappMessage += `📦 *الخدمة:* ${currentOrder.planName}\n`;
-        
-        if (currentOrder.serviceType === "chat") {
-            const billingText = currentOrder.billingType === 'monthly' ? 'شهري' : 'سنوي';
-            whatsappMessage += `📅 *الفترة:* اشتراك ${billingText}\n`;
-        }
-        
-        whatsappMessage += `💰 *السعر:* ${currentOrder.price}\n`;
-        whatsappMessage += `👤 *اسم العميل:* ${name}\n`;
-        whatsappMessage += `📱 *رقم الواتساب:* ${phone}\n`;
-        
-        if (notes) {
-            whatsappMessage += `📝 *ملاحظات إضافية:* ${notes}\n`;
-        }
-        
-        whatsappMessage += `\n---\nتم إرسال هذا الطلب عبر موقع اشتراكات أسامة`;
-        
-        // ترميز الرسالة لعمل رابط واتساب
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        const whatsappNumber = "9647717538315"; // رقمك
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-        
-        // فتح واتساب في نافذة جديدة
-        window.open(whatsappURL, '_blank');
-        
-        // إظهار رسالة تأكيد
-        alert('سيتم فتح واتساب لإرسال طلبك. تأكد من إرسال الرسالة.');
-        
-        // إعادة تعيين النموذج والعودة للصفحة الرئيسية بعد 3 ثواني
-        setTimeout(() => {
-            document.getElementById('final-order-form').reset();
-            document.getElementById('order-form-section').classList.add('hidden-section');
-            document.getElementById('home').classList.add('active-section');
-            document.querySelector('.nav-link.active').classList.remove('active');
-            document.querySelector('.nav-link[data-section="home"]').classList.add('active');
-        }, 3000);
-    });
-    
-    // تهيئة الصفحة لتبدأ بالصفحة الرئيسية
-    switchSection('home');
+    // إعداد قسم Instagram
+    setupInstagramSection();
 });
