@@ -514,7 +514,7 @@ function setupInstagramSection() {
         
         document.getElementById('contact-consultation-btn').addEventListener('click', function() {
             const message = encodeURIComponent(serviceData.contactMessage);
-            const whatsappUrl = `https:///967776440357?text=${message}`;
+            const whatsappUrl = `https://wa.me/967776440357?text=${message}`;
             window.open(whatsappUrl, '_blank');
         });
     }
@@ -539,7 +539,7 @@ function setupInstagramSection() {
         message += `💰 *السعر:* ${packagePrice}%0A%0A`;
         message += `---%0Aتم إرسال هذا الطلب عبر موقع LAZAROS STORE`;
         
-        const whatsappUrl = `https:///967776440357?text=${message}`;
+        const whatsappUrl = `https://wa.me/967776440357?text=${message}`;
         window.open(whatsappUrl, '_blank');
         
         setTimeout(() => {
@@ -718,7 +718,7 @@ function setupFacebookSection() {
         message += `💰 *السعر:* ${packagePrice}%0A%0A`;
         message += `---%0Aتم إرسال هذا الطلب عبر موقع LAZAROS STORE`;
         
-        const whatsappUrl = `https:///967776440357?text=${message}`;
+        const whatsappUrl = `https://wa.me/967776440357?text=${message}`;
         window.open(whatsappUrl, '_blank');
         
         setTimeout(() => {
@@ -875,7 +875,7 @@ function setupTikTokSection() {
         message += `💰 *السعر:* ${packagePrice}%0A%0A`;
         message += `---%0Aتم إرسال هذا الطلب عبر موقع LAZAROS STORE`;
         
-        const whatsappUrl = `https:///967776440357?text=${message}`;
+        const whatsappUrl = `https://wa.me/967776440357?text=${message}`;
         window.open(whatsappUrl, '_blank');
         
         setTimeout(() => {
@@ -951,7 +951,7 @@ function setupChatSection() {
         message += `💰 *السعر:* ${packagePrice}%0A%0A`;
         message += `---%0Aتم إرسال هذا الطلب عبر موقع LAZAROS STORE`;
         
-        const whatsappUrl = `https:///967776440357?text=${message}`;
+        const whatsappUrl = `https://wa.me/967776440357?text=${message}`;
         window.open(whatsappUrl, '_blank');
         
         setTimeout(() => {
@@ -1044,7 +1044,7 @@ function setupGeminiSection() {
         message += `📝 *التفاصيل:* ${packageDesc}%0A%0A`;
         message += `---%0Aتم إرسال هذا الطلب عبر موقع LAZAROS STORE`;
         
-        const whatsappUrl = `https:///967776440357?text=${message}`;
+        const whatsappUrl = `https://wa.me/967776440357?text=${message}`;
         window.open(whatsappUrl, '_blank');
         
         setTimeout(() => {
