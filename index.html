@@ -1,584 +1,88 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اشتراكات أسامة - متجر الاشتراكات الرقمية</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- شريط التنقل العلوي -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-store"></i>
-                <h1>اشتراكات أسامة</h1>
+<!-- محتوى Instagram (مخفي في البداية) -->
+<section id="instagram-section" class="section-content hidden">
+    <div class="section-header">
+        <button class="back-to-main">
+            <i class="fas fa-arrow-right"></i> العودة للرئيسية
+        </button>
+        <h2><i class="fab fa-instagram"></i> خدمات Instagram</h2>
+        <p>اختر الخدمة التي تريدها من القائمة أدناه</p>
+    </div>
+    
+    <!-- قائمة خدمات Instagram (المستوى الأول) -->
+    <div class="subservices-grid">
+        <!-- خدمة 1: متابعين -->
+        <div class="subservice-card" data-service="followers">
+            <div class="subservice-icon">
+                <i class="fas fa-users"></i>
             </div>
-            <div class="nav-links">
-                <a href="#" class="nav-link active" data-section="home">
-                    <i class="fas fa-home"></i> الرئيسية
-                </a>
-                <a href="#" class="nav-link" data-section="chat">
-                    <i class="fas fa-comments"></i> تشات
-                </a>
-                <a href="#" class="nav-link" data-section="instagram">
-                    <i class="fab fa-instagram"></i> انستجرام
-                </a>
-                <a href="#" class="nav-link" data-section="gemini">
-                    <i class="fas fa-robot"></i> جيمناي
-                </a>
-            </div>
-            <div class="contact-info">
-                <a href="https://wa.me/9647717538315" class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> تواصل معنا
-                </a>
-            </div>
+            <h3>باقات المتابعين</h3>
+            <p>زيادة متابعين الحساب</p>
+            <span class="badge">3 أنواع</span>
         </div>
-    </nav>
-
-    <!-- المحتوى الرئيسي -->
-    <main class="main-content">
-        <!-- الصفحة الرئيسية -->
-        <section id="home" class="content-section active-section">
-            <div class="hero">
-                <div class="hero-content">
-                    <h2>مرحباً بكم في متجر اشتراكات أسامة</h2>
-                    <p>أفضل الاشتراكات الرقمية بأسعار منافسة وجودة عالية</p>
-                    <div class="hero-features">
-                        <div class="feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>تشغيل فوري بعد الشراء</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>ضمان استرداد الأموال</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-headset"></i>
-                            <span>دعم فني 24/7</span>
-                        </div>
-                    </div>
-                </div>
+        
+        <!-- خدمة 2: لايكات -->
+        <div class="subservice-card" data-service="likes">
+            <div class="subservice-icon">
+                <i class="fas fa-heart"></i>
             </div>
-            
-            <div class="categories">
-                <h3 class="section-title">خدماتنا المتاحة</h3>
-                <div class="category-cards">
-                    <div class="category-card" data-section="chat">
-                        <i class="fas fa-comments"></i>
-                        <h4>اشتراكات تشات</h4>
-                        <p>جميع أنواع الاشتراكات (برو، جو، بلس، التري)</p>
-                    </div>
-                    <div class="category-card" data-section="instagram">
-                        <i class="fab fa-instagram"></i>
-                        <h4>متابعين انستجرام</h4>
-                        <p>باقات متابعين من ١٠٠٠ إلى ١٠٠٠٠ متابع</p>
-                    </div>
-                    <div class="category-card" data-section="gemini">
-                        <i class="fas fa-robot"></i>
-                        <h4>اشتراكات جيمناي</h4>
-                        <p>باقات متنوعة من اشتراكات الذكاء الاصطناعي</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم اشتراكات تشات -->
-        <section id="chat" class="content-section">
-            <div class="section-header">
-                <h2><i class="fas fa-comments"></i> اشتراكات تشات</h2>
-                <p>اختر نوع الاشتراك المناسب لك</p>
-            </div>
-            
-            <div class="plans-container">
-                <!-- خطة جو -->
-                <div class="plan-card">
-                    <div class="plan-badge">الأكثر مبيعاً</div>
-                    <div class="plan-header">
-                        <h3>جو (Go)</h3>
-                        <p>اشتراك مثالي للمستخدمين العاديين</p>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>سرعة قياسية</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>دعم 5 أجهزة</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>مساحة تخزين 50GB</span>
-                        </div>
-                    </div>
-                    <button class="select-plan-btn" data-plan-type="go" data-plan-name="جو (Go)">
-                        اختر هذا الاشتراك
-                    </button>
-                </div>
-                
-                <!-- خطة بلس -->
-                <div class="plan-card featured">
-                    <div class="plan-badge">الأفضل قيمة</div>
-                    <div class="plan-header">
-                        <h3>بلس (Plus)</h3>
-                        <p>اشتراك متكامل للمحترفين</p>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>سرعة فائقة</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>دعم 10 أجهزة</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>مساحة تخزين 200GB</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>دعم أولوية</span>
-                        </div>
-                    </div>
-                    <button class="select-plan-btn" data-plan-type="plus" data-plan-name="بلس (Plus)">
-                        اختر هذا الاشتراك
-                    </button>
-                </div>
-                
-                <!-- خطة برو -->
-                <div class="plan-card">
-                    <div class="plan-badge">للمحترفين</div>
-                    <div class="plan-header">
-                        <h3>برو (Pro)</h3>
-                        <p>اشتراك متقدم للمحتوى الاحترافي</p>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>سرعة خارقة</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>دعم 15 جهاز</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>مساحة تخزين 500GB</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>أولوية قصوى</span>
-                        </div>
-                    </div>
-                    <button class="select-plan-btn" data-plan-type="pro" data-plan-name="برو (Pro)">
-                        اختر هذا الاشتراك
-                    </button>
-                </div>
-                
-                <!-- خطة التري -->
-                <div class="plan-card">
-                    <div class="plan-badge">مميز</div>
-                    <div class="plan-header">
-                        <h3>التري (Ultra)</h3>
-                        <p>أفضل باقة مع جميع المميزات</p>
-                    </div>
-                    <div class="plan-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>أقصى سرعة</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>دعم 25 جهاز</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>مساحة تخزين 1TB</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>دعم فني مخصص</span>
-                        </div>
-                    </div>
-                    <button class="select-plan-btn" data-plan-type="ultra" data-plan-name="التري (Ultra)">
-                        اختر هذا الاشتراك
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم باقات انستجرام -->
-        <section id="instagram" class="content-section">
-            <div class="section-header">
-                <h2><i class="fab fa-instagram"></i> متابعين انستجرام</h2>
-                <p>اختر الباقة المناسبة لزيادة متابعينك</p>
-            </div>
-            
-            <div class="instagram-packages">
-                <!-- باقة 1000 متابع -->
-                <div class="insta-card">
-                    <div class="insta-header">
-                        <h3>١٠٠٠ متابع</h3>
-                        <div class="insta-price">٢٥,٠٠٠ دينار</div>
-                    </div>
-                    <div class="insta-features">
-                        <div class="insta-feature">
-                            <i class="fas fa-user-plus"></i>
-                            <span>متابعين حقيقيين</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>توصيل خلال 24 ساعة</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>ضمان لمدة 30 يوم</span>
-                        </div>
-                    </div>
-                    <button class="select-insta-btn" data-followers="1000" data-price="25000">
-                        <i class="fas fa-shopping-cart"></i> طلب الباقة
-                    </button>
-                </div>
-                
-                <!-- باقة 2000 متابع -->
-                <div class="insta-card">
-                    <div class="insta-header">
-                        <h3>٢٠٠٠ متابع</h3>
-                        <div class="insta-price">٤٥,٠٠٠ دينار</div>
-                    </div>
-                    <div class="insta-features">
-                        <div class="insta-feature">
-                            <i class="fas fa-user-plus"></i>
-                            <span>متابعين حقيقيين</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>توصيل خلال 24 ساعة</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>ضمان لمدة 30 يوم</span>
-                        </div>
-                    </div>
-                    <button class="select-insta-btn" data-followers="2000" data-price="45000">
-                        <i class="fas fa-shopping-cart"></i> طلب الباقة
-                    </button>
-                </div>
-                
-                <!-- باقة 3000 متابع -->
-                <div class="insta-card">
-                    <div class="insta-header">
-                        <h3>٣٠٠٠ متابع</h3>
-                        <div class="insta-price">٦٥,٠٠٠ دينار</div>
-                    </div>
-                    <div class="insta-features">
-                        <div class="insta-feature">
-                            <i class="fas fa-user-plus"></i>
-                            <span>متابعين حقيقيين</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>توصيل خلال 24 ساعة</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>ضمان لمدة 30 يوم</span>
-                        </div>
-                    </div>
-                    <button class="select-insta-btn" data-followers="3000" data-price="65000">
-                        <i class="fas fa-shopping-cart"></i> طلب الباقة
-                    </button>
-                </div>
-                
-                <!-- باقة 5000 متابع -->
-                <div class="insta-card featured">
-                    <div class="insta-header">
-                        <h3>٥٠٠٠ متابع</h3>
-                        <div class="insta-price">١٠٠,٠٠٠ دينار</div>
-                    </div>
-                    <div class="insta-features">
-                        <div class="insta-feature">
-                            <i class="fas fa-user-plus"></i>
-                            <span>متابعين حقيقيين</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>توصيل خلال 24 ساعة</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>ضمان لمدة 60 يوم</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-gift"></i>
-                            <span>هدية 200 لايك</span>
-                        </div>
-                    </div>
-                    <button class="select-insta-btn" data-followers="5000" data-price="100000">
-                        <i class="fas fa-shopping-cart"></i> طلب الباقة
-                    </button>
-                </div>
-                
-                <!-- باقة 10000 متابع -->
-                <div class="insta-card">
-                    <div class="insta-header">
-                        <h3>١٠٠٠٠ متابع</h3>
-                        <div class="insta-price">١٨٠,٠٠٠ دينار</div>
-                    </div>
-                    <div class="insta-features">
-                        <div class="insta-feature">
-                            <i class="fas fa-user-plus"></i>
-                            <span>متابعين حقيقيين</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>توصيل خلال 48 ساعة</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>ضمان لمدة 90 يوم</span>
-                        </div>
-                        <div class="insta-feature">
-                            <i class="fas fa-gift"></i>
-                            <span>هدية 500 لايك</span>
-                        </div>
-                    </div>
-                    <button class="select-insta-btn" data-followers="10000" data-price="180000">
-                        <i class="fas fa-shopping-cart"></i> طلب الباقة
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم اشتراكات جيمناي -->
-        <section id="gemini" class="content-section">
-            <div class="section-header">
-                <h2><i class="fas fa-robot"></i> اشتراكات جيمناي</h2>
-                <p>باقات الذكاء الاصطناعي المتقدمة</p>
-            </div>
-            
-            <div class="gemini-plans">
-                <!-- خطة جيمناي الأساسية -->
-                <div class="gemini-card">
-                    <div class="gemini-header">
-                        <h3>جيمناي الأساسية</h3>
-                        <div class="gemini-price">٥٠,٠٠٠ دينار <span>/شهر</span></div>
-                    </div>
-                    <div class="gemini-features">
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>1000 طلب/شهر</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>دعم الصور والنصوص</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>سرعة عادية</span>
-                        </div>
-                    </div>
-                    <button class="select-gemini-btn" data-plan="gemini-basic" data-plan-name="جيمناي الأساسية" data-price="50000">
-                        اختر الخطة
-                    </button>
-                </div>
-                
-                <!-- خطة جيمناي المتقدمة -->
-                <div class="gemini-card featured">
-                    <div class="gemini-header">
-                        <h3>جيمناي المتقدمة</h3>
-                        <div class="gemini-price">٨٠,٠٠٠ دينار <span>/شهر</span></div>
-                    </div>
-                    <div class="gemini-features">
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>5000 طلب/شهر</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>دعم متعدد الوسائط</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>سرعة فائقة</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>الوصول للبيتا</span>
-                        </div>
-                    </div>
-                    <button class="select-gemini-btn" data-plan="gemini-pro" data-plan-name="جيمناي المتقدمة" data-price="80000">
-                        اختر الخطة
-                    </button>
-                </div>
-                
-                <!-- خطة جيمناي للأعمال -->
-                <div class="gemini-card">
-                    <div class="gemini-header">
-                        <h3>جيمناي للأعمال</h3>
-                        <div class="gemini-price">١٥٠,٠٠٠ دينار <span>/شهر</span></div>
-                    </div>
-                    <div class="gemini-features">
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>طلب غير محدود</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>دعم API كامل</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>أقصى سرعة</span>
-                        </div>
-                        <div class="gemini-feature">
-                            <i class="fas fa-check"></i>
-                            <span>دعم فني مخصص</span>
-                        </div>
-                    </div>
-                    <button class="select-gemini-btn" data-plan="gemini-business" data-plan-name="جيمناي للأعمال" data-price="150000">
-                        اختر الخطة
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم اختيار الفترة (شهري/سنوي) -->
-        <section id="billing-section" class="hidden-section billing-section">
-            <div class="section-header">
-                <h2><i class="fas fa-calendar-alt"></i> اختر فترة الاشتراك</h2>
-                <p id="selected-plan-title">لـ بلس (Plus)</p>
-            </div>
-            
-            <div class="billing-options">
-                <div class="billing-card" data-billing="monthly">
-                    <div class="billing-header">
-                        <h3>اشتراك شهري</h3>
-                        <div class="billing-price" id="price-monthly">٧٥,٠٠٠ دينار</div>
-                    </div>
-                    <div class="billing-features">
-                        <div class="billing-feature">
-                            <i class="fas fa-sync-alt"></i>
-                            <span>تجديد شهري</span>
-                        </div>
-                        <div class="billing-feature">
-                            <i class="fas fa-credit-card"></i>
-                            <span>دفع شهري</span>
-                        </div>
-                    </div>
-                    <button class="select-billing-btn" data-billing="monthly">
-                        اختر الشهري
-                    </button>
-                </div>
-                
-                <div class="billing-card featured" data-billing="yearly">
-                    <div class="billing-header">
-                        <h3>اشتراك سنوي</h3>
-                        <div class="billing-price" id="price-yearly">٦٠٠,٠٠٠ دينار</div>
-                        <div class="billing-save">وفر ٣٣٪</div>
-                    </div>
-                    <div class="billing-features">
-                        <div class="billing-feature">
-                            <i class="fas fa-calendar-check"></i>
-                            <span>مدفوعة لسنة كاملة</span>
-                        </div>
-                        <div class="billing-feature">
-                            <i class="fas fa-gift"></i>
-                            <span>شهرين مجاناً</span>
-                        </div>
-                        <div class="billing-feature">
-                            <i class="fas fa-medal"></i>
-                            <span>أولوية في الدعم</span>
-                        </div>
-                    </div>
-                    <button class="select-billing-btn" data-billing="yearly">
-                        اختر السنوي
-                    </button>
-                </div>
-            </div>
-            
-            <button class="back-btn" id="back-to-plans">
-                <i class="fas fa-arrow-right"></i> العودة لاختيار نوع آخر
-            </button>
-        </section>
-
-        <!-- نموذج الطلب النهائي -->
-        <section id="order-form-section" class="hidden-section order-section">
-            <div class="section-header">
-                <h2><i class="fas fa-shopping-cart"></i> أكمل طلبك</h2>
-                <p>أدخل بياناتك لإتمام عملية الشراء</p>
-            </div>
-            
-            <div class="order-summary">
-                <h3>ملخص طلبك:</h3>
-                <p id="order-summary-text">بلس (Plus) - اشتراك شهري بسعر ٧٥,٠٠٠ دينار</p>
-            </div>
-            
-            <form id="final-order-form">
-                <div class="form-group">
-                    <label for="customer-name">
-                        <i class="fas fa-user"></i> اسمك الكامل
-                    </label>
-                    <input type="text" id="customer-name" placeholder="أدخل اسمك الكامل" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="customer-phone">
-                        <i class="fas fa-phone"></i> رقم الواتساب
-                    </label>
-                    <input type="tel" id="customer-phone" placeholder="9647717538315" value="9647717538315" required>
-                    <small>سيتم التواصل معك على هذا الرقم عبر واتساب</small>
-                </div>
-                
-                <div class="form-group">
-                    <label for="customer-notes">
-                        <i class="fas fa-sticky-note"></i> ملاحظات إضافية (اختياري)
-                    </label>
-                    <textarea id="customer-notes" placeholder="أي ملاحظات أو طلبات خاصة..."></textarea>
-                </div>
-                
-                <div class="form-actions">
-                    <button type="button" class="back-btn" id="back-to-billing">
-                        <i class="fas fa-arrow-right"></i> العودة
-                    </button>
-                    <button type="submit" class="submit-order-btn">
-                        <i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب
-                    </button>
-                </div>
-            </form>
-        </section>
-    </main>
-
-    <!-- تذييل الصفحة -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3><i class="fas fa-store"></i> اشتراكات أسامة</h3>
-                <p>متجرك الموثوق للاشتراكات الرقمية والخدمات الإلكترونية</p>
-            </div>
-            <div class="footer-section">
-                <h3>التواصل</h3>
-                <p><i class="fab fa-whatsapp"></i> واتساب: +964 771 753 8315</p>
-                <p><i class="fas fa-clock"></i> متاح 24/7 للدعم والاستفسارات</p>
-            </div>
-            <div class="footer-section">
-                <h3>الخدمات</h3>
-                <p>اشتراكات تشات</p>
-                <p>متابعين انستجرام</p>
-                <p>اشتراكات جيمناي</p>
-            </div>
+            <h3>لايكات المنشورات</h3>
+            <p>زيادة التفاعل على المنشورات</p>
+            <span class="badge">2 نوع</span>
         </div>
-        <div class="footer-bottom">
-            <p>جميع الحقوق محفوظة © 2023 اشتراكات أسامة</p>
+        
+        <!-- خدمة 3: تعليقات -->
+        <div class="subservice-card" data-service="comments">
+            <div class="subservice-icon">
+                <i class="fas fa-comment"></i>
+            </div>
+            <h3>تعليقات المنشورات</h3>
+            <p>تعليقات على المنشورات</p>
+            <span class="badge">2 نوع</span>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        
+        <!-- خدمة 4: مشاهدات ريلز -->
+        <div class="subservice-card" data-service="reels">
+            <div class="subservice-icon">
+                <i class="fas fa-play-circle"></i>
+            </div>
+            <h3>مشاهدات الريلز</h3>
+            <p>زيادة مشاهدات الفيديو</p>
+            <span class="badge">باقات مباشرة</span>
+        </div>
+        
+        <!-- خدمة 5: إعادة نشر -->
+        <div class="subservice-card" data-service="repost">
+            <div class="subservice-icon">
+                <i class="fas fa-retweet"></i>
+            </div>
+            <h3>إعادة نشر</h3>
+            <p>إعادة نشر المنشورات</p>
+            <span class="badge">باقات مباشرة</span>
+        </div>
+        
+        <!-- خدمة 6: مشاركة منشور -->
+        <div class="subservice-card" data-service="share">
+            <div class="subservice-icon">
+                <i class="fas fa-share-alt"></i>
+            </div>
+            <h3>مشاركة المنشور</h3>
+            <p>مشاركة المنشورات</p>
+            <span class="badge">باقات مباشرة</span>
+        </div>
+        
+        <!-- خدمة 7: توثيق حساب -->
+        <div class="subservice-card" data-service="verification">
+            <div class="subservice-icon">
+                <i class="fas fa-badge-check"></i>
+            </div>
+            <h3>توثيق الحساب</h3>
+            <p>العلامة الزرقاء (استشارة)</p>
+            <span class="badge">تواصل معنا</span>
+        </div>
+    </div>
+    
+    <!-- محتوى تفصيلي للخدمات (يظهر عند الاختيار) -->
+    <div id="instagram-detail" class="hidden">
+        <!-- سيتم تعبئته بالجافاسكريبت -->
+    </div>
+</section>
