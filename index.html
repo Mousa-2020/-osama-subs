@@ -1,88 +1,756 @@
-<!-- محتوى Instagram (مخفي في البداية) -->
-<section id="instagram-section" class="section-content hidden">
-    <div class="section-header">
-        <button class="back-to-main">
-            <i class="fas fa-arrow-right"></i> العودة للرئيسية
-        </button>
-        <h2><i class="fab fa-instagram"></i> خدمات Instagram</h2>
-        <p>اختر الخدمة التي تريدها من القائمة أدناه</p>
-    </div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAZAROS STORE - متجر الخدمات الرقمية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ترويسة الموقع الصغيرة -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <h1>LAZAROS STORE</h1>
+            </div>
+            <button class="menu-toggle" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#" data-section="instagram">Instagram</a></li>
+                    <li><a href="#" data-section="facebook">Facebook</a></li>
+                    <li><a href="#" data-section="tiktok">TikTok</a></li>
+                    <li><a href="#" data-section="chat">اشتراكات تشات</a></li>
+                    <li><a href="#" data-section="gemini">اشتراكات Gemini</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- الصفحة الرئيسية -->
+    <main id="main-content" class="container">
+        <!-- مقدمة الموقع -->
+        <section class="intro-section">
+            <div class="intro-content">
+                <h2 class="intro-title">مرحباً بكم في <span class="highlight">LAZAROS STORE</span></h2>
+                <p class="intro-text">
+                    نوفر لكم طيفاً واسعاً من <strong>الخدمات الرقمية</strong> لتعزيز حضوركم على المنصات الاجتماعية 
+                    مثل <strong>Instagram</strong> و <strong>Facebook</strong> و <strong>TikTok</strong>، 
+                    بالإضافة إلى اشتراكات الحوار الذكي <strong>(Chat)</strong> و <strong>(Gemini)</strong>.
+                </p>
+                <p class="intro-note">
+                    <i class="fas fa-comments"></i> 
+                    <strong>جميع الطلبات تتم مناقشتها وإتمامها بشكل آمن وسريع عبر الدردشة المباشرة على واتساب.</strong>
+                </p>
+                <p class="intro-instruction">
+                    اختر خدمتك المفضلة من القائمة أدناه لمعرفة التفاصيل والأسعار.
+                </p>
+            </div>
+        </section>
+
+        <!-- قائمة الخدمات الرئيسية -->
+        <section class="services-section">
+            <h2 class="section-title">خدماتنا المتاحة</h2>
+            <p class="section-subtitle">اختر القسم الذي تريده للتصفح والطلب</p>
+            
+            <div class="services-grid">
+                <!-- خدمة Instagram -->
+                <a href="#" class="service-card" data-section="instagram">
+                    <div class="service-icon instagram-bg">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 class="service-name">خدمات Instagram</h3>
+                    <p class="service-count">7 خدمات متاحة</p>
+                    <ul class="service-features">
+                        <li>متابعين، لايكات، تعليقات</li>
+                        <li>مشاهدات ريلز، مشاركة</li>
+                    </ul>
+                </a>
+                
+                <!-- خدمة Facebook -->
+                <a href="#" class="service-card" data-section="facebook">
+                    <div class="service-icon facebook-bg">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3 class="service-name">خدمات Facebook</h3>
+                    <p class="service-count">5 خدمات متاحة</p>
+                    <ul class="service-features">
+                        <li>متابعين صفحة، لايكات</li>
+                        <li>تعليقات، مشاهدات فيديو</li>
+                    </ul>
+                </a>
+                
+                <!-- خدمة TikTok -->
+                <a href="#" class="service-card" data-section="tiktok">
+                    <div class="service-icon tiktok-bg">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3 class="service-name">خدمات TikTok</h3>
+                    <p class="service-count">6 خدمات متاحة</p>
+                    <ul class="service-features">
+                        <li>متابعين، لايكات، تعليقات</li>
+                        <li>مشاهدات، مشاركات</li>
+                    </ul>
+                </a>
+                
+                <!-- اشتراكات تشات -->
+                <a href="#" class="service-card" data-section="chat">
+                    <div class="service-icon chat-bg">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3 class="service-name">اشتراكات تشات</h3>
+                    <p class="service-count">4 خطط متاحة</p>
+                    <ul class="service-features">
+                        <li>جو، بلس، برو، بزنس</li>
+                        <li>اشتراكات شهرية وسنوية</li>
+                    </ul>
+                </a>
+                
+                <!-- اشتراكات Gemini -->
+                <a href="#" class="service-card" data-section="gemini">
+                    <div class="service-icon gemini-bg">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-name">اشتراكات Gemini</h3>
+                    <p class="service-count">4 خطط متاحة</p>
+                    <ul class="service-features">
+                        <li>الأساسية، المتقدمة</li>
+                        <li>برو (سنوي)، التري (شهري)</li>
+                    </ul>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- أقسام الخدمات (مخفية في البداية) -->
     
-    <!-- قائمة خدمات Instagram (المستوى الأول) -->
-    <div class="subservices-grid">
-        <!-- خدمة 1: متابعين -->
-        <div class="subservice-card" data-service="followers">
-            <div class="subservice-icon">
-                <i class="fas fa-users"></i>
-            </div>
-            <h3>باقات المتابعين</h3>
-            <p>زيادة متابعين الحساب</p>
-            <span class="badge">3 أنواع</span>
+    <!-- قسم Instagram -->
+    <section id="instagram-section" class="section-content hidden">
+        <div class="section-header">
+            <button class="back-to-main">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <h2><i class="fab fa-instagram"></i> خدمات Instagram</h2>
+            <p>اختر الخدمة التي تريدها من القائمة أدناه</p>
         </div>
         
-        <!-- خدمة 2: لايكات -->
-        <div class="subservice-card" data-service="likes">
-            <div class="subservice-icon">
-                <i class="fas fa-heart"></i>
+        <div class="subservices-grid">
+            <div class="subservice-card" data-service="followers">
+                <div class="subservice-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>باقات المتابعين</h3>
+                <p>زيادة متابعين الحساب</p>
+                <span class="badge">3 أنواع</span>
             </div>
-            <h3>لايكات المنشورات</h3>
-            <p>زيادة التفاعل على المنشورات</p>
-            <span class="badge">2 نوع</span>
+            
+            <div class="subservice-card" data-service="likes">
+                <div class="subservice-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>لايكات المنشورات</h3>
+                <p>زيادة التفاعل على المنشورات</p>
+                <span class="badge">2 نوع</span>
+            </div>
+            
+            <div class="subservice-card" data-service="comments">
+                <div class="subservice-icon">
+                    <i class="fas fa-comment"></i>
+                </div>
+                <h3>تعليقات المنشورات</h3>
+                <p>تعليقات على المنشورات</p>
+                <span class="badge">2 نوع</span>
+            </div>
+            
+            <div class="subservice-card" data-service="reels">
+                <div class="subservice-icon">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <h3>مشاهدات الريلز</h3>
+                <p>زيادة مشاهدات الفيديو</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="repost">
+                <div class="subservice-icon">
+                    <i class="fas fa-retweet"></i>
+                </div>
+                <h3>إعادة نشر</h3>
+                <p>إعادة نشر المنشورات</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="share">
+                <div class="subservice-icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3>مشاركة المنشور</h3>
+                <p>مشاركة المنشورات</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="verification">
+                <div class="subservice-icon">
+                    <i class="fas fa-badge-check"></i>
+                </div>
+                <h3>توثيق الحساب</h3>
+                <p>العلامة الزرقاء (استشارة)</p>
+                <span class="badge">تواصل معنا</span>
+            </div>
         </div>
         
-        <!-- خدمة 3: تعليقات -->
-        <div class="subservice-card" data-service="comments">
-            <div class="subservice-icon">
-                <i class="fas fa-comment"></i>
-            </div>
-            <h3>تعليقات المنشورات</h3>
-            <p>تعليقات على المنشورات</p>
-            <span class="badge">2 نوع</span>
+        <div id="instagram-detail" class="hidden"></div>
+    </section>
+
+    <!-- قسم Facebook -->
+    <section id="facebook-section" class="section-content hidden">
+        <div class="section-header">
+            <button class="back-to-main" data-back="facebook">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <h2><i class="fab fa-facebook"></i> خدمات Facebook</h2>
+            <p>اختر الخدمة التي تريدها من القائمة أدناه</p>
         </div>
         
-        <!-- خدمة 4: مشاهدات ريلز -->
-        <div class="subservice-card" data-service="reels">
-            <div class="subservice-icon">
-                <i class="fas fa-play-circle"></i>
+        <div class="subservices-grid">
+            <div class="subservice-card" data-service="fb-followers">
+                <div class="subservice-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3>متابعين صفحة</h3>
+                <p>زيادة متابعين صفحة الفيسبوك</p>
+                <span class="badge">يمنيين / أجانب</span>
             </div>
-            <h3>مشاهدات الريلز</h3>
-            <p>زيادة مشاهدات الفيديو</p>
-            <span class="badge">باقات مباشرة</span>
+            
+            <div class="subservice-card" data-service="fb-likes">
+                <div class="subservice-icon">
+                    <i class="fas fa-thumbs-up"></i>
+                </div>
+                <h3>لايكات المنشورات</h3>
+                <p>زيادة الإعجابات على المنشورات</p>
+                <span class="badge">عربية / أجنبية</span>
+            </div>
+            
+            <div class="subservice-card" data-service="fb-comments">
+                <div class="subservice-icon">
+                    <i class="fas fa-comment-dots"></i>
+                </div>
+                <h3>تعليقات المنشورات</h3>
+                <p>تعليقات على منشورات الفيسبوك</p>
+                <span class="badge">عربية / أجنبية</span>
+            </div>
+            
+            <div class="subservice-card" data-service="fb-views">
+                <div class="subservice-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>مشاهدات الفيديو</h3>
+                <p>زيادة مشاهدات فيديوهات الصفحة</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="fb-verification">
+                <div class="subservice-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>توثيق الصفحة</h3>
+                <p>العلامة الزرقاء للصفحة (استشارة)</p>
+                <span class="badge">تواصل معنا</span>
+            </div>
         </div>
         
-        <!-- خدمة 5: إعادة نشر -->
-        <div class="subservice-card" data-service="repost">
-            <div class="subservice-icon">
-                <i class="fas fa-retweet"></i>
-            </div>
-            <h3>إعادة نشر</h3>
-            <p>إعادة نشر المنشورات</p>
-            <span class="badge">باقات مباشرة</span>
+        <div id="facebook-detail" class="hidden"></div>
+    </section>
+
+    <!-- قسم TikTok -->
+    <section id="tiktok-section" class="section-content hidden">
+        <div class="section-header">
+            <button class="back-to-main" data-back="tiktok">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <h2><i class="fab fa-tiktok"></i> خدمات TikTok</h2>
+            <p>اختر الخدمة التي تريدها من القائمة أدناه</p>
         </div>
         
-        <!-- خدمة 6: مشاركة منشور -->
-        <div class="subservice-card" data-service="share">
-            <div class="subservice-icon">
-                <i class="fas fa-share-alt"></i>
+        <div class="subservices-grid">
+            <div class="subservice-card" data-service="tk-followers">
+                <div class="subservice-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>متابعين</h3>
+                <p>زيادة متابعين حساب TikTok</p>
+                <span class="badge">عرب</span>
             </div>
-            <h3>مشاركة المنشور</h3>
-            <p>مشاركة المنشورات</p>
-            <span class="badge">باقات مباشرة</span>
+            
+            <div class="subservice-card" data-service="tk-likes">
+                <div class="subservice-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>لايكات</h3>
+                <p>زيادة لايكات الفيديوهات</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="tk-comments">
+                <div class="subservice-icon">
+                    <i class="fas fa-comment"></i>
+                </div>
+                <h3>تعليقات</h3>
+                <p>تعليقات على الفيديوهات</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="tk-views">
+                <div class="subservice-icon">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <h3>مشاهدات</h3>
+                <p>زيادة مشاهدات الفيديوهات</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="tk-shares">
+                <div class="subservice-icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3>مشاركات</h3>
+                <p>مشاركة الفيديوهات</p>
+                <span class="badge">باقات مباشرة</span>
+            </div>
+            
+            <div class="subservice-card" data-service="tk-consultation">
+                <div class="subservice-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>استشارة نمو</h3>
+                <p>استشارة متخصصة لنمو الحساب</p>
+                <span class="badge">تواصل معنا</span>
+            </div>
         </div>
         
-        <!-- خدمة 7: توثيق حساب -->
-        <div class="subservice-card" data-service="verification">
-            <div class="subservice-icon">
-                <i class="fas fa-badge-check"></i>
-            </div>
-            <h3>توثيق الحساب</h3>
-            <p>العلامة الزرقاء (استشارة)</p>
-            <span class="badge">تواصل معنا</span>
+        <div id="tiktok-detail" class="hidden"></div>
+    </section>
+
+    <!-- قسم اشتراكات تشات -->
+    <section id="chat-section" class="section-content hidden">
+        <div class="section-header">
+            <button class="back-to-main" data-back="chat">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <h2><i class="fas fa-comment-dots"></i> اشتراكات تشات</h2>
+            <p>اختر خطة الاشتراك المناسبة لك من الخيارات أدناه</p>
         </div>
-    </div>
-    
-    <!-- محتوى تفصيلي للخدمات (يظهر عند الاختيار) -->
-    <div id="instagram-detail" class="hidden">
-        <!-- سيتم تعبئته بالجافاسكريبت -->
-    </div>
-</section>
+        
+        <div class="chat-plans-container">
+            <!-- خطة جو -->
+            <div class="chat-plan-card" data-plan="go">
+                <div class="plan-header">
+                    <span class="plan-badge">الأساسية</span>
+                    <h3>جو (Go)</h3>
+                    <p class="plan-description">الحل المثالي للمستخدمين الجدد والاستخدام العادي</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>سرعة قياسية</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم 5 أجهزة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>مساحة تخزين 50GB</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم فني أساسي</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="monthly">
+                        <div class="price-label">شهري</div>
+                        <div class="price-amount">٢٥ دولار</div>
+                        <button class="select-plan-btn">اختر الشهري</button>
+                    </div>
+                    <div class="price-option" data-billing="yearly">
+                        <div class="price-label">سنوي</div>
+                        <div class="price-amount">٢٠٠ دولار</div>
+                        <div class="price-save">وفر ٤٠ دولار</div>
+                        <button class="select-plan-btn">اختر السنوي</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- خطة بلس -->
+            <div class="chat-plan-card featured" data-plan="plus">
+                <div class="plan-header">
+                    <span class="plan-badge">الأكثر شيوعاً</span>
+                    <h3>بلس (Plus)</h3>
+                    <p class="plan-description">الحل المتكامل للمستخدمين المتوسطين والمحتوى الاحترافي</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>سرعة فائقة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم 10 أجهزة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>مساحة تخزين 200GB</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم أولوية</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ميزات متقدمة</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="monthly">
+                        <div class="price-label">شهري</div>
+                        <div class="price-amount">٥٠ دولار</div>
+                        <button class="select-plan-btn">اختر الشهري</button>
+                    </div>
+                    <div class="price-option" data-billing="yearly">
+                        <div class="price-label">سنوي</div>
+                        <div class="price-amount">٤٠٠ دولار</div>
+                        <div class="price-save">وفر ٢٠٠ دولار</div>
+                        <button class="select-plan-btn">اختر السنوي</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- خطة برو -->
+            <div class="chat-plan-card" data-plan="pro">
+                <div class="plan-header">
+                    <span class="plan-badge">للمحترفين</span>
+                    <h3>برو (Pro)</h3>
+                    <p class="plan-description">للشركات الصغيرة والمحتوى الاحترافي المتقدم</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>سرعة خارقة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم 15 جهاز</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>مساحة تخزين 500GB</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>أولوية قصوى</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>تحليلات متقدمة</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="monthly">
+                        <div class="price-label">شهري</div>
+                        <div class="price-amount">١٠٠ دولار</div>
+                        <button class="select-plan-btn">اختر الشهري</button>
+                    </div>
+                    <div class="price-option" data-billing="yearly">
+                        <div class="price-label">سنوي</div>
+                        <div class="price-amount">٨٠٠ دولار</div>
+                        <div class="price-save">وفر ٤٠٠ دولار</div>
+                        <button class="select-plan-btn">اختر السنوي</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- خطة بزنس -->
+            <div class="chat-plan-card" data-plan="business">
+                <div class="plan-header">
+                    <span class="plan-badge">للأعمال</span>
+                    <h3>بزنس (Business)</h3>
+                    <p class="plan-description">الحل الشامل للشركات والمؤسسات الكبيرة</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>أقصى سرعة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم 25 جهاز</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>مساحة تخزين 1TB</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم فني مخصص</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>API كامل</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>تقارير مفصلة</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="monthly">
+                        <div class="price-label">شهري</div>
+                        <div class="price-amount">٢٠٠ دولار</div>
+                        <button class="select-plan-btn">اختر الشهري</button>
+                    </div>
+                    <div class="price-option" data-billing="yearly">
+                        <div class="price-label">سنوي</div>
+                        <div class="price-amount">١٦٠٠ دولار</div>
+                        <div class="price-save">وفر ٨٠٠ دولار</div>
+                        <button class="select-plan-btn">اختر السنوي</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم اشتراكات جيمناي -->
+    <section id="gemini-section" class="section-content hidden">
+        <div class="section-header">
+            <button class="back-to-main" data-back="gemini">
+                <i class="fas fa-arrow-right"></i> العودة للرئيسية
+            </button>
+            <h2><i class="fas fa-robot"></i> اشتراكات Gemini</h2>
+            <p>اختر خطة الذكاء الاصطناعي المناسبة لاحتياجاتك</p>
+        </div>
+        
+        <div class="gemini-plans-container">
+            <!-- الخطة الأساسية -->
+            <div class="gemini-plan-card" data-plan="basic">
+                <div class="plan-header">
+                    <span class="plan-badge">للمبتدئين</span>
+                    <h3>الأساسية</h3>
+                    <p class="plan-description">الحل المثالي للتعرف على إمكانيات Gemini</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>١٠٠٠ طلب/شهر</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم الصور والنصوص</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>سرعة عادية</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم أساسي</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="monthly">
+                        <div class="price-label">اشتراك شهري</div>
+                        <div class="price-amount">٥٠ دولار</div>
+                        <button class="select-plan-btn">اختر الخطة</button>
+                    </div>
+                </div>
+                
+                <div class="plan-note">
+                    <i class="fas fa-info-circle"></i> هذه الخطة شهرية فقط
+                </div>
+            </div>
+            
+            <!-- الخطة المتقدمة -->
+            <div class="gemini-plan-card featured" data-plan="advanced">
+                <div class="plan-header">
+                    <span class="plan-badge">الأكثر شيوعاً</span>
+                    <h3>المتقدمة</h3>
+                    <p class="plan-description">للشركات الصغيرة والمطورين</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>٥٠٠٠ طلب/شهر</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم متعدد الوسائط</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>سرعة فائقة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>الوصول للبيتا</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم أولوية</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="monthly">
+                        <div class="price-label">اشتراك شهري</div>
+                        <div class="price-amount">٨٠ دولار</div>
+                        <button class="select-plan-btn">اختر الخطة</button>
+                    </div>
+                </div>
+                
+                <div class="plan-note">
+                    <i class="fas fa-info-circle"></i> هذه الخطة شهرية فقط
+                </div>
+            </div>
+            
+            <!-- خطة برو (سنوي فقط) -->
+            <div class="gemini-plan-card" data-plan="pro">
+                <div class="plan-header">
+                    <span class="plan-badge">سنوي</span>
+                    <h3>برو (Pro)</h3>
+                    <p class="plan-description">للمحترفين والاستخدام المكثف</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>طلب غير محدود</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم API كامل</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>أقصى سرعة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم فني مخصص</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>تقارير متقدمة</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="yearly">
+                        <div class="price-label">اشتراك سنوي</div>
+                        <div class="price-amount">١٠٠٠ دولار</div>
+                        <div class="price-save">وفر ٢٠٠ دولار</div>
+                        <button class="select-plan-btn">اختر الخطة</button>
+                    </div>
+                </div>
+                
+                <div class="plan-note">
+                    <i class="fas fa-info-circle"></i> هذه الخطة سنوية فقط
+                </div>
+            </div>
+            
+            <!-- خطة التري (شهري فقط) -->
+            <div class="gemini-plan-card" data-plan="ultra">
+                <div class="plan-header">
+                    <span class="plan-badge">مميز</span>
+                    <h3>التري (Ultra)</h3>
+                    <p class="plan-description">الحل الشامل للأعمال الكبيرة</p>
+                </div>
+                
+                <div class="plan-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>طلب غير محدود</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم API كامل + مخصص</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>سرعة فائقة للغاية</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>دعم على مدار الساعة</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>تخصيص كامل</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>حلول متكاملة</span>
+                    </div>
+                </div>
+                
+                <div class="plan-pricing">
+                    <div class="price-option" data-billing="monthly">
+                        <div class="price-label">اشتراك شهري</div>
+                        <div class="price-amount">٣٠٠ دولار</div>
+                        <button class="select-plan-btn">اختر الخطة</button>
+                    </div>
+                </div>
+                
+                <div class="plan-note">
+                    <i class="fas fa-info-circle"></i> هذه الخطة شهرية فقط
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الموقع -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>LAZAROS STORE</h3>
+                <p>متجرك الموثوق للخدمات الرقمية</p>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>تواصل معنا</h4>
+                <div class="contact-links">
+                    <a href="https://wa.me/00967776440357" class="contact-btn whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> واتساب: 967776440357
+                    </a>
+                    <a href="https://www.instagram.com/v4.u_" class="contact-btn instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> تابعنا على إنستجرام
+                    </a>
+                </div>
+                <p class="support-text"><i class="fas fa-headset"></i> دعم فني متاح على مدار الساعة</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 جميع الحقوق محفوظة لـ <strong>LAZAROS STORE</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+    </html>
