@@ -14,28 +14,28 @@ const instagramData = {
         description: "اختر الجنسية ثم اختر الباقة المناسبة",
         type: "category",
         categories: [
-            { id: "saudi", name: "سعوديون", color: "#1a237e" },
-            { id: "iraqi", name: "عراقيون", color: "#4fc3f7" },
-            { id: "foreign", name: "أجانب", color: "#8e24aa" }
+            { id: "saudi", name: "سعوديين %100", color: "#1a237e" },
+            { id: "iraqi", name: "عراقيين %100", color: "#4fc3f7" },
+            { id: "foreign", name: " أجانب وهميين", color: "#8e24aa" }
         ],
         packages: {
             saudi: [
-                { id: "saudi_1k", name: "١٠٠٠ متابع", price: "٤٠ دولار", featured: true },
-                { id: "saudi_3k", name: "٣٠٠٠ متابع", price: "١٠٠ دولار" },
-                { id: "saudi_5k", name: "٥٠٠٠ متابع", price: "١٥٠ دولار" },
-                { id: "saudi_10k", name: "١٠٠٠٠ متابع", price: "٢٨٠ دولار" }
+                { id: "saudi_1k", name: "١٠٠٠ متابع", price: " 45$", featured: true },
+                { id: "saudi_3k", name: "٣٠٠٠ متابع", price: "130$" },
+                { id: "saudi_5k", name: "٥٠٠٠ متابع", price: "215$" },
+                { id: "saudi_10k", name: "١٠٠٠٠ متابع", price: "400$" }
             ],
             iraqi: [
-                { id: "iraqi_1k", name: "١٠٠٠ متابع", price: "٢٥ دولار", featured: true },
-                { id: "iraqi_3k", name: "٣٠٠٠ متابع", price: "٦٠ دولار" },
-                { id: "iraqi_5k", name: "٥٠٠٠ متابع", price: "٩٠ دولار" },
-                { id: "iraqi_10k", name: "١٠٠٠٠ متابع", price: "١٦٠ دولار" }
+                { id: "iraqi_1k", name: "١٠٠٠ متابع", price: "15$", featured: true },
+                { id: "iraqi_3k", name: "٣٠٠٠ متابع", price: "40$" },
+                { id: "iraqi_5k", name: "٥٠٠٠ متابع", price: " 70$" },
+                { id: "iraqi_10k", name: "١٠٠٠٠ متابع", price: "160$" }
             ],
             foreign: [
-                { id: "foreign_1k", name: "١٠٠٠ متابع", price: "١٥ دولار", featured: true },
-                { id: "foreign_3k", name: "٣٠٠٠ متابع", price: "٣٥ دولار" },
-                { id: "foreign_5k", name: "٥٠٠٠ متابع", price: "٥٠ دولار" },
-                { id: "foreign_10k", name: "١٠٠٠٠ متابع", price: "٩٠ دولار" }
+                { id: "foreign_1k", name: "١٠٠٠ متابع", price: "3$", featured: true },
+                { id: "foreign_3k", name: "٣٠٠٠ متابع", price: "9$" },
+                { id: "foreign_5k", name: "٥٠٠٠ متابع", price: "15$" },
+                { id: "foreign_10k", name: "١٠٠٠٠ متابع", price: "29$" }
             ]
         }
     },
@@ -49,16 +49,16 @@ const instagramData = {
         ],
         packages: {
             arabic: [
-                { id: "arabic_1k", name: "١٠٠٠ لايك", price: "٢ دولار" },
-                { id: "arabic_2k", name: "٢٠٠٠ لايك", price: "٣ دولار", featured: true },
-                { id: "arabic_5k", name: "٥٠٠٠ لايك", price: "٦ دولار" },
-                { id: "arabic_10k", name: "١٠٠٠٠ لايك", price: "١٠ دولار" }
+                { id: "arabic_1k", name: "١٠٠٠ لايك", price: "4$" },
+                { id: "arabic_2k", name: "٢٠٠٠ لايك", price: "8$", featured: true },
+                { id: "arabic_5k", name: "٥٠٠٠ لايك", price: "20$" },
+                { id: "arabic_10k", name: "١٠٠٠٠ لايك", price: "39$" }
             ],
             foreign: [
-                { id: "foreign_1k", name: "١٠٠٠ لايك", price: "١.٥ دولار" },
-                { id: "foreign_2k", name: "٢٠٠٠ لايك", price: "٢.٥ دولار" },
-                { id: "foreign_5k", name: "٥٠٠٠ لايك", price: "٥ دولار", featured: true },
-                { id: "foreign_10k", name: "١٠٠٠٠ لايك", price: "٨ دولار" }
+                { id: "foreign_1k", name: "١٠٠٠ لايك", price: "1.5$" },
+                { id: "foreign_2k", name: "٢٠٠٠ لايك", price: "3$" },
+                { id: "foreign_5k", name: "٥٠٠٠ لايك", price: "7$", featured: true },
+                { id: "foreign_10k", name: "١٠٠٠٠ لايك", price: "10$" }
             ]
         }
     },
@@ -67,21 +67,21 @@ const instagramData = {
         description: "اختر نوع التعليقات ثم اختر الباقة",
         type: "category",
         categories: [
-            { id: "arabic", name: "عربية", color: "#E4405F" },
+            { id: "arabic", name: "مخصصة", color: "#E4405F" },
             { id: "foreign", name: "أجنبية", color: "#8e24aa" }
         ],
         packages: {
             arabic: [
-                { id: "arabic_1k", name: "١٠٠٠ تعليق", price: "٢٠ دولار" },
-                { id: "arabic_2k", name: "٢٠٠٠ تعليق", price: "٣٥ دولار", featured: true },
-                { id: "arabic_5k", name: "٥٠٠٠ تعليق", price: "٨٠ دولار" },
-                { id: "arabic_10k", name: "١٠٠٠٠ تعليق", price: "١٥٠ دولار" }
+                { id: "arabic_1k", name: "١٠٠٠ تعليق", price: "7$" },
+                { id: "arabic_2k", name: "٢٠٠٠ تعليق", price: "13$", featured: true },
+                { id: "arabic_5k", name: "٥٠٠٠ تعليق", price: "33$" },
+                { id: "arabic_10k", name: "١٠٠٠٠ تعليق", price: "60$" }
             ],
             foreign: [
-                { id: "foreign_1k", name: "١٠٠٠ تعليق", price: "١٥ دولار" },
-                { id: "foreign_2k", name: "٢٠٠٠ تعليق", price: "٢٨ دولار" },
-                { id: "foreign_5k", name: "٥٠٠٠ تعليق", price: "٦٥ دولار", featured: true },
-                { id: "foreign_10k", name: "١٠٠٠٠ تعليق", price: "١٢٠ دولار" }
+                { id: "foreign_1k", name: "١٠٠٠ تعليق", price: "6$" },
+                { id: "foreign_2k", name: "٢٠٠٠ تعليق", price: "12$" },
+                { id: "foreign_5k", name: "٥٠٠٠ تعليق", price: "30$", featured: true },
+                { id: "foreign_10k", name: "١٠٠٠٠ تعليق", price: "60$" }
             ]
         }
     },
@@ -90,10 +90,10 @@ const instagramData = {
         description: "اختر الباقة المناسبة لمشاهدات الريلز",
         type: "direct",
         packages: [
-            { id: "reels_100k", name: "١٠٠٬٠٠٠ مشاهدة", price: "٤ دولار", featured: true },
-            { id: "reels_500k", name: "٥٠٠٬٠٠٠ مشاهدة", price: "٨ دولار" },
-            { id: "reels_1m", name: "١٬٠٠٠٬٠٠٠ مشاهدة", price: "١٢ دولار" },
-            { id: "reels_5m", name: "٥٬٠٠٠٬٠٠٠ مشاهدة", price: "٣٠ دولار" }
+            { id: "reels_100k", name: "١٠٠٬٠٠٠ مشاهدة", price: "2$", featured: true },
+            { id: "reels_500k", name: "٥٠٠٬٠٠٠ مشاهدة", price: "5$" },
+            { id: "reels_1m", name: "١٬٠٠٠٬٠٠٠ مشاهدة", price: "10$" },
+            { id: "reels_5m", name: "٥٬٠٠٠٬٠٠٠ مشاهدة", price: "25$" }
         ]
     },
     repost: {
@@ -101,10 +101,10 @@ const instagramData = {
         description: "اختر الباقة المناسبة لإعادة النشر",
         type: "direct",
         packages: [
-            { id: "repost_10k", name: "١٠٬٠٠٠ إعادة نشر", price: "٢ دولار", featured: true },
-            { id: "repost_30k", name: "٣٠٬٠٠٠ إعادة نشر", price: "٤ دولار" },
-            { id: "repost_50k", name: "٥٠٬٠٠٠ إعادة نشر", price: "٦ دولار" },
-            { id: "repost_100k", name: "١٠٠٬٠٠٠ إعادة نشر", price: "٨ دولار" }
+            { id: "repost_10k", name: "١٠٠٠ إعادة نشر", price: "2$", featured: true },
+            { id: "repost_30k", name: "٣٠٠٠ إعادة نشر", price: "6$" },
+            { id: "repost_50k", name: "٥٠٠٠ إعادة نشر", price: "9$" },
+            { id: "repost_100k", name: "١٠٠٠٠ إعادة نشر", price: "15$" }
         ]
     },
     share: {
@@ -112,9 +112,9 @@ const instagramData = {
         description: "اختر الباقة المناسبة للمشاركة",
         type: "direct",
         packages: [
-            { id: "share_100k", name: "١٠٠٬٠٠٠ مشاركة", price: "٤ دولار", featured: true },
-            { id: "share_500k", name: "٥٠٠٬٠٠٠ مشاركة", price: "١٥ دولار" },
-            { id: "share_1m", name: "١٬٠٠٠٬٠٠٠ مشاركة", price: "٢٥ دولار" }
+            { id: "share_100k", name: "١٠٠٬٠٠٠ مشاركة", price: "3$", featured: true },
+            { id: "share_500k", name: "٥٠٠٬٠٠٠ مشاركة", price: "10$" },
+            { id: "share_1m", name: "١٬٠٠٠٬٠٠٠ مشاركة", price: "19$" }
         ]
     },
     verification: {
