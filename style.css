@@ -1,0 +1,788 @@
+/* التنسيقات العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* شريط التنقل */
+.navbar {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 28px;
+    color: #4fc3f7;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #e3f2fd;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-link i {
+    margin-left: 8px;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgba(79, 195, 247, 0.2);
+    color: #4fc3f7;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.content-section.active-section {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* الصفحة الرئيسية */
+.hero {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-radius: 16px;
+    padding: 50px 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.hero h2 {
+    color: #1a237e;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #455a64;
+    margin-bottom: 30px;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.feature i {
+    color: #1a237e;
+    font-size: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #1a237e;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #4fc3f7;
+    border-radius: 2px;
+}
+
+.category-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 25px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.category-card i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #1a237e;
+}
+
+.category-card h4 {
+    font-size: 22px;
+    color: #1a237e;
+    margin-bottom: 12px;
+}
+
+.category-card p {
+    color: #546e7a;
+    font-size: 15px;
+}
+
+/* بطاقات الاشتراكات */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 32px;
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.section-header h2 i {
+    margin-left: 15px;
+    color: #4fc3f7;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: #546e7a;
+}
+
+.plans-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.plan-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 280px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+}
+
+.plan-card.featured {
+    border: 2px solid #4fc3f7;
+    transform: scale(1.05);
+}
+
+.plan-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #4fc3f7;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.plan-header h3 {
+    font-size: 24px;
+    color: #1a237e;
+    margin-bottom: 8px;
+}
+
+.plan-header p {
+    color: #78909c;
+    font-size: 14px;
+}
+
+.plan-features {
+    margin-bottom: 25px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.feature-item i {
+    color: #4caf50;
+}
+
+.select-plan-btn {
+    background-color: #1a237e;
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-plan-btn:hover {
+    background-color: #283593;
+}
+
+/* باقات الانستجرام */
+.instagram-packages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.insta-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    width: 220px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.insta-card:hover {
+    transform: translateY(-5px);
+}
+
+.insta-card.featured {
+    border: 2px solid #e4405f;
+    transform: scale(1.05);
+}
+
+.insta-header {
+    margin-bottom: 20px;
+}
+
+.insta-header h3 {
+    font-size: 22px;
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.insta-price {
+    font-size: 24px;
+    color: #e4405f;
+    font-weight: 700;
+}
+
+.insta-features {
+    margin-bottom: 25px;
+}
+
+.insta-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.insta-feature i {
+    color: #e4405f;
+}
+
+.select-insta-btn {
+    background-color: #e4405f;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.select-insta-btn:hover {
+    background-color: #d81b60;
+}
+
+/* باقات جيمناي */
+.gemini-plans {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.gemini-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 300px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.gemini-card:hover {
+    transform: translateY(-5px);
+}
+
+.gemini-card.featured {
+    border: 2px solid #6200ea;
+}
+
+.gemini-header {
+    margin-bottom: 25px;
+}
+
+.gemini-header h3 {
+    font-size: 22px;
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.gemini-price {
+    font-size: 28px;
+    color: #6200ea;
+    font-weight: 700;
+}
+
+.gemini-price span {
+    font-size: 16px;
+    color: #78909c;
+}
+
+.gemini-features {
+    margin-bottom: 25px;
+}
+
+.gemini-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    justify-content: center;
+}
+
+.gemini-feature i {
+    color: #6200ea;
+}
+
+.select-gemini-btn {
+    background-color: #6200ea;
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-gemini-btn:hover {
+    background-color: #7c4dff;
+}
+
+/* قسم اختيار الفترة */
+.billing-section {
+    text-align: center;
+}
+
+.billing-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.billing-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 320px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.billing-card.featured {
+    border: 2px solid #4caf50;
+}
+
+.billing-header {
+    margin-bottom: 30px;
+}
+
+.billing-header h3 {
+    font-size: 26px;
+    color: #1a237e;
+    margin-bottom: 15px;
+}
+
+.billing-price {
+    font-size: 36px;
+    color: #4caf50;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.billing-save {
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.billing-features {
+    margin-bottom: 30px;
+}
+
+.billing-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.billing-feature i {
+    color: #4caf50;
+}
+
+.select-billing-btn {
+    background-color: #1a237e;
+    color: white;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-billing-btn:hover {
+    background-color: #283593;
+}
+
+.back-btn {
+    background-color: #78909c;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    background-color: #546e7a;
+}
+
+/* نموذج الطلب */
+.order-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.order-summary {
+    background-color: #e8f5e9;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.order-summary h3 {
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+#order-summary-text {
+    font-size: 18px;
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1a237e;
+    font-size: 16px;
+}
+
+.form-group label i {
+    margin-left: 8px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cfd8dc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Cairo', sans-serif;
+    transition: border 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #4fc3f7;
+    outline: none;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #78909c;
+    font-size: 14px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.submit-order-btn {
+    background-color: #25d366;
+    color: white;
+    padding: 16px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-order-btn:hover {
+    background-color: #128c7e;
+}
+
+/* تذييل الصفحة */
+footer {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+    color: white;
+    margin-top: 60px;
+    padding-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #4fc3f7;
+}
+
+.footer-section h3 i {
+    margin-left: 10px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.footer-section p i {
+    margin-left: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero h2 {
+        font-size: 26px;
+    }
+    
+    .hero-features {
+        gap: 15px;
+    }
+    
+    .feature {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .plans-container, .instagram-packages, .gemini-plans {
+        gap: 20px;
+    }
+    
+    .plan-card, .insta-card, .gemini-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .billing-options {
+        gap: 20px;
+    }
+    
+    .billing-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+}
+
+.hidden-section {
+    display: none;
+}
